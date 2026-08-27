@@ -21,7 +21,7 @@ R_f = V(AB)V(AC)V(AD)V(BC)V(BD)
       V(A)V(B)V(ABC)V(ABD)V(CD)
 ```
 
-Here juxtaposition denotes union. The main theorem proves that there is a
+Here juxtaposition denotes union. The main theorem proves that there is an
 optimal universal constant `c_2^* > 0`, independent of the number of variables, `f`, the
 four subsets, and `epsilon`, such that
 
