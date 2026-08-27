@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research note or its certificates, cite this repository and the archived version when available."
+title: "Uniform Ingleton Bounds for Nonnegative Lorentzian Quadratics"
+type: software
+authors:
+  - family-names: "guangxiangdebizi"
+repository-code: "https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics"
+url: "https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics"
+license: MIT
+version: 0.1.0
+date-released: 2026-08-27

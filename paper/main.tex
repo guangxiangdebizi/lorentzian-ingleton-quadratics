@@ -1,0 +1,626 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\length}{\operatorname{length}}
+\newcommand{\val}{\operatorname{val}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\unionword}[2]{#1#2}
+
+\title{Uniform Ingleton Bounds for Nonnegative Lorentzian Quadratics}
+\author{guangxiangdebizi}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For a nonzero homogeneous quadratic $f$ with nonnegative coefficients and a
+subset $S$ of its variables, put
+\[
+ V_\varepsilon(S)=f(\one_S+\varepsilon\one_E),\qquad \varepsilon>0.
+\]
+We prove that if $f$ is Lorentzian, then the multiplicative Ingleton ratio
+formed from the ten values $V_\varepsilon(S)$ is bounded below by a universal
+positive constant.  The constant is independent of the number of variables,
+the polynomial, four arbitrary and possibly overlapping subsets, and the
+regularization parameter.  The proof reduces to sixteen membership atoms,
+uses semialgebraic curve selection to tropicalize a hypothetical vanishing
+sequence, realizes the resulting rank-two valuated matroid over a discretely
+valued field, and places all ten tropical evaluations in a single
+finite-length module.  The ordinary Ingleton inequality for module lengths
+then rules out positive ratio valuation.  We also construct an exact
+five-vector determinantal family showing that the optimal constant is at most
+\[
+ \frac{-107+51\sqrt{17}}{128}=0.806862397707\ldots.
+\]
+The proof is non-effective and does not determine the optimal constant.
+\end{abstract}
+
+\section{Statement}
+
+Let $E$ be a finite set and let
+\[
+ f(x)=\sum_{|\alpha|=2}c_\alpha x^\alpha,
+ \qquad c_\alpha\geq 0,
+\]
+be nonzero.  In degree two we call $f$ \emph{Lorentzian} when its Hessian has
+at most one positive eigenvalue.  This agrees with the degree-two part of the
+standard definition of Lorentzian polynomials
+\cite{BrandenHuh2020}.
+
+For $S\subseteq E$ and $\varepsilon>0$, define
+\begin{equation}
+ V_{f,\varepsilon}(S)=f(\one_S+\varepsilon\one_E).
+ \label{eq:evaluation}
+\end{equation}
+Every coordinate in \eqref{eq:evaluation} is positive, so every such value is
+positive.  Given four arbitrary subsets $A,B,C,D\subseteq E$, write $AB$ for
+$A\cup B$, and similarly for longer strings.  Define
+\begin{equation}
+ \mathcal R_f(\varepsilon;A,B,C,D)=
+ \frac{V(AB)V(AC)V(AD)V(BC)V(BD)}
+ {V(A)V(B)V(ABC)V(ABD)V(CD)}.
+ \label{eq:ratio}
+\end{equation}
+where $V$ abbreviates $V_{f,\varepsilon}$.  Let
+\begin{equation}
+ c_2^\star=
+ \inf_{E,f,A,B,C,D,\varepsilon}
+ \mathcal R_f(\varepsilon;A,B,C,D),
+ \label{eq:optimal-constant}
+\end{equation}
+where the infimum ranges over exactly the data just specified: finite $E$,
+nonzero nonnegative Lorentzian quadratics $f$, arbitrary subsets
+$A,B,C,D\subseteq E$, and $\varepsilon>0$.
+
+\begin{theorem}[Uniform degree-two bound]
+\label{thm:main}
+The optimal constant in \eqref{eq:optimal-constant} satisfies $c_2^\star>0$.
+\end{theorem}
+
+The proof gives existence but no effective value.  The following construction
+gives a strict upper bound.
+
+\begin{proposition}[Exact upper-bound family]
+\label{prop:upper}
+The best possible constant in Theorem~\ref{thm:main} satisfies
+\[
+ 0<c_2^\star\leq \frac{-107+51\sqrt{17}}{128}.
+\]
+\end{proposition}
+
+Classical Ingleton says that a rank function obtained from linear subspaces
+satisfies an additive five-against-five inequality
+\cite{Ingleton1971}.  Theorem~\ref{thm:main} is not a direct application:
+the coefficients of $f$ and the regularizer may approach zero at unrelated
+rates.  Controlling this simultaneous degeneration is the main point.
+
+\section{Fixed-dimensional reduction}
+
+Let $\mathcal L=\{\mathsf A,\mathsf B,\mathsf C,\mathsf D\}$ be a set of
+four labels.  Membership in the four ground-set subsets gives each variable a
+pattern $\omega\subseteq\mathcal L$: for example,
+$\mathsf A\in\omega$ means that the variable belongs to the ground-set subset
+$A$.  Replace every variable with pattern $\omega$ by one variable
+$y_\omega$.  There are at most $2^4=16$ such variables, including the outside
+pattern $\varnothing$.  Denote the resulting quadratic by $q$.
+We abbreviate label subsets by strings, for example
+$\mathsf{AB}=\{\mathsf A,\mathsf B\}$.
+
+This substitution preserves all ten evaluations in \eqref{eq:ratio}.  If its
+matrix is denoted by $L$, then
+\[
+ \nabla^2q=L^{\mathsf T}(\nabla^2f)L.
+\]
+Therefore $q$ is Lorentzian.  We may henceforth work in sixteen fixed
+variables, allowing some variables to be inactive.
+
+The ratio is unchanged by multiplying $q$ by a positive scalar, so normalize
+\begin{equation}
+ q(\one)=\sum_\alpha c_\alpha=1.
+ \label{eq:normalization}
+\end{equation}
+The nonnegative coefficient simplex satisfying \eqref{eq:normalization},
+intersected with the closed condition that the Hessian has at most one
+positive eigenvalue, is compact and semialgebraic.
+
+Put
+\[
+ \delta=\frac{\varepsilon}{1+\varepsilon}\in(0,1),\qquad
+ u_J(\omega)=
+ \begin{cases}
+ 1,&\omega\cap J\neq\varnothing,\\
+ \delta,&\omega\cap J=\varnothing,
+ \end{cases}
+\]
+for a label set $J\subseteq\mathcal L$.  Let
+$U_J=\bigcup_{\mathsf X\in J}X$ be the corresponding union of ground-set
+subsets.  Thus $\omega\cap J$ is an intersection of two label sets, not an
+intersection with the ground set.  Homogeneity gives
+\[
+ V_{q,\varepsilon}(U_J)=(1+\varepsilon)^2q(u_J),
+\]
+and the common factor cancels in \eqref{eq:ratio}.  By
+\eqref{eq:normalization},
+\begin{equation}
+ \delta^2\leq q(u_J)\leq 1.
+ \label{eq:delta-bounds}
+\end{equation}
+Consequently a sequence on which the ratio tends to zero must have
+$\delta\to0$.
+
+\section{A valuated rank-two limit}
+
+Assume, for contradiction, that the infimum in
+Theorem~\ref{thm:main} is zero.  The graph of the ratio over the compact
+normalized coefficient space and $0<\delta\leq1$ is semialgebraic.
+The Nash curve selection lemma
+\cite[Proposition~8.1.13]{BochnakCosteRoy1998} gives a Nash arc approaching a
+boundary point with ratio zero.  Each nonzero coordinate of a Nash arc is
+algebraic over $\R(t)$; applying the classical Newton--Puiseux theorem to the
+finitely many coordinate functions and taking one common finite ramification
+therefore gives an arc indexed by $t\downarrow0$ such
+that
+\begin{align*}
+ c_\alpha(t)&=a_\alpha t^{p_\alpha}+\text{higher terms},
+ &a_\alpha&>0,\\
+ \delta(t)&=a_\delta t^\lambda+\text{higher terms},
+ &a_\delta&>0,\quad\lambda>0,
+\end{align*}
+for every coefficient not identically zero.  Identically zero coefficients
+are assigned valuation $+\infty$.  The Hessian signature condition is
+semialgebraic, so the arc defines a Lorentzian polynomial over the ordered
+field of real convergent Puiseux series.  Since the ratio tends to zero along
+the arc,
+\begin{equation}
+ \val_t\mathcal R_q>0.
+ \label{eq:positive-valuation}
+\end{equation}
+
+For every atom $i$, introduce two clones $i^0,i^1$, and polarize
+\[
+ q(y)=\sum_i c_{ii}y_i^2+\sum_{i<j}c_{ij}y_iy_j
+\]
+to
+\begin{equation}
+ \widetilde q(z)=
+ \sum_i c_{ii}z_{i^0}z_{i^1}
+ +\sum_{i<j}\frac{c_{ij}}4
+ (z_{i^0}+z_{i^1})(z_{j^0}+z_{j^1}).
+ \label{eq:polarization}
+\end{equation}
+Polarization preserves the Lorentzian property
+\cite{BrandenHuh2020}.  Let $p_I$ be the valuation of the coefficient of the
+clone pair $I$.  Br\"and\'en and Huh prove that coefficient valuations of
+Lorentzian polynomials are $M$-convex
+\cite[Corollary~3.28]{BrandenHuh2020}.  In the multiaffine degree-two case this
+is exactly the valuated-basis-exchange condition for a rank-two valuated
+matroid.  Equivalently, for every four distinct clones $i,j,k,l$,
+\begin{equation}
+ \min\{p_{ij}+p_{kl},p_{ik}+p_{jl},p_{il}+p_{jk}\}
+ \quad\text{is attained at least twice}.
+ \label{eq:tropical-plucker}
+\end{equation}
+Infinite entries are allowed, and the finite pairs form the bases of a
+rank-two matroid.
+
+For a label set $J\subseteq\mathcal L$, let $\widetilde E_J$ contain both
+clones of every atom $\omega$ satisfying $\omega\cap J\neq\varnothing$, and
+define
+\begin{equation}
+ r_\lambda(J)=
+ \max_{I}\{\lambda|I\cap\widetilde E_J|-p_I\},
+ \label{eq:regularized-rank}
+\end{equation}
+where the maximum ranges over finite clone pairs.  All leading coefficients
+are nonnegative, so no cancellation occurs.  Equations
+\eqref{eq:polarization} and \eqref{eq:regularized-rank} give
+\begin{equation}
+ \val_t q(u_J(t))=2\lambda-r_\lambda(J).
+ \label{eq:evaluation-valuation}
+\end{equation}
+
+\section{Rank two over a discrete valuation ring}
+
+We use the special fact that every rank-two valuated matroid is realizable.
+
+\begin{lemma}[Rank-two realization]
+\label{lem:realization}
+After multiplying all finite $p_I$ by one positive integer, there are a
+discretely valued field $\K$ with infinite residue field, valuation ring
+$\OO$, uniformizer $\pi$, and columns $v_e\in\K^2$ such that
+\[
+ \val\det(v_e,v_{e'})=p_{ee'}.
+\]
+An infinite value is represented by an identically zero determinant.
+\end{lemma}
+
+\begin{proof}
+For finite uniform support, \eqref{eq:tropical-plucker} is the four-point
+condition for a rational weighted tree after adding leaf potentials.  Root
+the tree.  At each branching choose distinct residue constants and construct
+Puiseux coordinates $x_e$ along the root-to-leaf paths.  The first branch at
+which two leaves differ gives
+\[
+ \val(x_e-x_{e'})=h(e,e'),
+\]
+where $h(e,e')$ is their last-common-ancestor depth.  Suitable leaf scalars
+then make $v_e=\pi^{b_e}(1,x_e)$ realize $p_{ee'}$.  This is the usual
+rank-two tree model for the tropical Grassmannian
+\cite{SpeyerSturmfels2004}.
+
+For nonuniform support, first remove loops and pass to the parallel classes
+of the underlying rank-two matroid.  Choose a representative $e_P$ of every
+class $P$.  If $e\in P$ and $f$ is outside $P$, the difference
+\[
+ p_{ef}-p_{e_Pf}
+\]
+is independent of the choice of $f$: this is the equality of the two finite
+sums in \eqref{eq:tropical-plucker} applied to two elements of $P$ and two
+outside elements.  Denote the difference by $s_e$.  After treating the
+vacuous two- and three-element cases directly, one obtains for distinct
+classes $P,Q$
+\[
+ p_{ef}=\bar p_{PQ}+s_e+s_f
+ \qquad(e\in P, f\in Q).
+\]
+Realize the simple quotient valuation $\bar p$ by the tree construction and
+replace the representative column of $P$ by its multiples $\pi^{s_e}v_{e_P}$.
+Elements in one parallel class are then exact scalar multiples, so their
+determinants are zero and have value $+\infty$.  Loops are represented by
+zero columns.  A finite ramification clears the rational tree depths, leaf
+potentials, and offsets.  We may then take, for example, a Laurent-series
+field with real residue field, which is infinite.
+\end{proof}
+
+Clear the denominator of $\lambda$ at the same time as those of $p_I$; this
+multiplies every valuation below by the same positive integer and does not
+change any inequality.  Thus assume $p_I,\lambda\in\mathbb Z$ and normalize
+$\val(\pi)=1$.
+
+Let
+\[
+ L_0=\sum_e\OO v_e\subseteq\K^2.
+\]
+Because the support has rank two, $L_0$ is a full-rank lattice.  For a clone
+subset $T$, set
+\[
+ L_T=L_0+\sum_{e\in T}\OO\pi^{-\lambda}v_e.
+\]
+The determinant ideal of $L_T$ is generated by its pairs of displayed
+generators.  Hence
+\[
+ \val(\bigwedge^2 L_T)
+ =\min_I\{p_I-\lambda|I\cap T|\}.
+\]
+Taking $T=\widetilde E_J$ identifies the right-hand side with
+$-r_\lambda(J)$.  Smith normal form gives
+\begin{equation}
+ r_\lambda(J)-r_\lambda(\varnothing)
+ =\length_\OO(L_{\widetilde E_J}/L_0).
+ \label{eq:length-rank}
+\end{equation}
+
+All these quotients live in the single finite-length module
+\[
+ Q=\pi^{-\lambda}L_0/L_0.
+\]
+For each membership atom $\omega$, let $U_\omega\subseteq Q$ be generated by
+the images of $\pi^{-\lambda}v_e$ for its two clones.  Then
+\begin{equation}
+ h(J):=r_\lambda(J)-r_\lambda(\varnothing)
+ =\length_\OO\left(
+   \sum_{\omega:\,\omega\cap J\neq\varnothing}U_\omega
+  \right).
+ \label{eq:module-rank}
+\end{equation}
+
+\section{Module-length Ingleton and completion of the proof}
+
+\begin{lemma}[Module-length Ingleton]
+\label{lem:module-ingleton}
+Let $Q$ be a finite-length module and let $A,B,C,D$ be four submodules.  If
+$h(S)$ is the length of the sum of the submodules named by $S$, then
+\begin{align}
+ &h(AB)+h(AC)+h(AD)+h(BC)+h(BD)\notag\\
+ &\qquad\geq h(A)+h(B)+h(ABC)+h(ABD)+h(CD).
+ \label{eq:ingleton}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ I(A;B)=h(A)+h(B)-h(AB)=\length(A\cap B)
+\]
+and define
+\[
+ I(A;B\mid C)=h(AC)+h(BC)-h(C)-h(ABC).
+\]
+Put $Z=A\cap B$.  Modularity of length gives
+\begin{align*}
+ I(A;B\mid C)&\geq\length(Z)-\length(Z\cap C),\\
+ I(A;B\mid D)&\geq\length(Z)-\length(Z\cap D),\\
+ I(C;D)&=\length(C\cap D).
+\end{align*}
+Moreover,
+\[
+ \length(Z\cap C)+\length(Z\cap D)
+ \leq\length(Z)+\length(C\cap D),
+\]
+because the sum of the two intersections lies in $Z$ and their intersection
+lies in $C\cap D$.  Thus
+\[
+ I(A;B\mid C)+I(A;B\mid D)+I(C;D)\geq I(A;B),
+\]
+which expands to \eqref{eq:ingleton}.
+\end{proof}
+
+Apply the lemma to
+\[
+ H_{\mathsf X}=\sum_{\omega:\,\mathsf X\in\omega}U_\omega,
+ \qquad \mathsf X\in\mathcal L.
+\]
+These four submodules may overlap.  By \eqref{eq:module-rank},
+$r_\lambda$ satisfies \eqref{eq:ingleton}, since adding the same constant to a
+set function cancels from the five-against-five expression.
+
+Combining this with \eqref{eq:evaluation-valuation},
+\begin{align*}
+ \val_t\mathcal R_q
+ &=\sum_{J\in\{\mathsf A,\mathsf B,\mathsf{ABC},\mathsf{ABD},\mathsf{CD}\}}
+     r_\lambda(J)\\
+ &\quad-\sum_{J\in\{\mathsf{AB},\mathsf{AC},\mathsf{AD},
+                       \mathsf{BC},\mathsf{BD}\}}r_\lambda(J)\\
+ &\leq0.
+\end{align*}
+This contradicts \eqref{eq:positive-valuation}.  Therefore the normalized
+fixed-dimensional semialgebraic family has no sequence with ratio tending to
+zero.  Its infimum is positive, proving Theorem~\ref{thm:main}.
+
+\section{The exact upper-bound family}
+
+Use variables $a,b,c,d,o$, take $A,B,C,D$ to be the four corresponding
+singletons, and leave $o$ outside their union.  For $L,x>0$, define
+\begin{align}
+ f_{L,x}={}&xL^{-3}(ac+bc)+\frac{x}{4}L^{-8}(ad+bd)
+ +xL^{-2}(ao+bo)\notag\\
+ &+L^{-1}cd+L^5co+\frac14do.
+ \label{eq:upper-family}
+\end{align}
+It is the Cauchy--Binet expansion of
+\[
+ \det\left(\sum_{i\in\{a,b,c,d,o\}}z_i v_iv_i^{\mathsf T}\right)
+\]
+for
+\begin{align*}
+ v_a=v_b&=\sqrt{x}L^{-5/2}(1,0),&
+ v_c&=L(0,1),\\
+ v_d&=L^{-3/2}(1,1/2),&
+ v_o&=L^{3/2}(1,1).
+\end{align*}
+The determinant of a positive-semidefinite linear pencil is real stable, and
+homogeneous real stable polynomials with nonnegative coefficients are
+Lorentzian \cite{BrandenHuh2020}.  Thus $f_{L,x}$ is a nonnegative
+Lorentzian quadratic.
+
+Set $\varepsilon=L^{-8}$.  The leading powers and coefficients of the ten
+evaluations are
+\[
+\begin{array}{c|c@{\qquad}c|c}
+AB&2xL^{-10}&A&xL^{-10}\\
+AC&(x+1)L^{-3}&B&xL^{-10}\\
+AD&(x+1)L^{-8}/4&ABC&(2x+1)L^{-3}\\
+BC&(x+1)L^{-3}&ABD&(2x+1)L^{-8}/4\\
+BD&(x+1)L^{-8}/4&CD&L^{-1}.
+\end{array}
+\]
+Both products have total $L$-exponent $-32$, and therefore
+\begin{equation}
+ \lim_{L\to\infty}\mathcal R_{f_{L,x}}(L^{-8})
+ =R_*(x)=\frac{(x+1)^4}{2x(2x+1)^2}.
+ \label{eq:limit-ratio}
+\end{equation}
+Its logarithmic derivative has the sign of
+\[
+ 2x^2-3x-1.
+\]
+Since $R_*$ diverges at both ends of the positive half-line, its unique
+minimum occurs at
+\[
+ x_*=(3+\sqrt{17})/4.
+\]
+Substitution into \eqref{eq:limit-ratio} gives
+\[
+ R_*(x_*)=\frac{-107+51\sqrt{17}}{128}.
+\]
+This proves Proposition~\ref{prop:upper}.
+
+For a finite rational check, $L=4$ and $x=16/9$ give
+\[
+ \mathcal R=
+ \frac{1151375679760487544161993156626743807199200025995873}
+ {1309813763635875854527900038158486602837796044630625}
+ <\frac9{10}.
+\]
+The repository computes this identity using exact rational arithmetic.
+
+\section{Separation from a common principal-minor model}
+
+The ten subsets in \eqref{eq:ratio} have the same incidence pattern as the
+classical $4\times4$ principal-minor Ingleton functional.  The following
+exact example shows that Theorem~\ref{thm:main} is not obtained by simply
+placing its ten values into one positive-semidefinite matrix.
+
+For a matrix $K$ and $I\subseteq\{1,2,3,4\}$, write $K[I]$ for the principal
+minor indexed by $I$.  A positive \emph{modular gauge} has the form
+\[
+ W(I)=\lambda\left(\prod_{i\in I}a_i\right)V(I),
+ \qquad \lambda,a_1,a_2,a_3,a_4>0.
+\]
+The factors in such a gauge cancel from the five-against-five ratio.
+
+\begin{proposition}[Exact model separation]
+\label{prop:separation}
+There are a nonnegative Lorentzian quadratic, four subsets, and a positive
+regularizer for which no real symmetric positive-semidefinite $4\times4$
+matrix has the ten specified principal minors equal to the ten evaluations,
+even after an arbitrary positive modular gauge.
+\end{proposition}
+
+\begin{proof}
+Take
+\[
+ f(x_0,x_1)=x_0x_1,\qquad \varepsilon=\frac13,
+ \qquad A=\{0\},\quad B=\{1\},\quad C=\varnothing,
+ \quad D=\{0,1\}.
+\]
+In the order
+\[
+ (AB,AC,AD,BC,BD;A,B,ABC,ABD,CD),
+\]
+the ten values are
+\begin{equation}
+ \left(
+ \frac{16}{9},\frac49,\frac{16}{9},\frac49,\frac{16}{9};
+ \frac49,\frac49,\frac{16}{9},\frac{16}{9},\frac{16}{9}
+ \right).
+ \label{eq:separation-values}
+\end{equation}
+The Hessian of $f$ has eigenvalues $1,-1$, so $f$ is Lorentzian.
+
+Use the principal-minor labels $1=C,2=D,3=A,4=B$.  Put
+\[
+ a=V(A),\quad b=V(B),\quad u=V(AB),\quad
+ P=V(ABC),\quad Q=V(ABD)
+\]
+and form the five gauge invariants
+\begin{align*}
+ x&=\frac{uV(AC)}{aP},&
+ y&=\frac{uV(BC)}{bP},&
+ z&=\frac{uV(AD)}{aQ},&
+ w&=\frac{uV(BD)}{bQ},&
+ h&=\frac{u^3V(CD)}{abPQ}.
+\end{align*}
+The five positive gauge parameters normalize
+$V(A),V(B),V(AB),V(ABC),V(ABD)$ to $1$; the remaining five coordinates are
+$(x,y,z,w,h)$.  Existence of a representation is invariant under this
+normalization.  Any remaining four diagonal gauge factors can then be
+absorbed by a positive diagonal congruence of the representing matrix, while
+the common scalar remains.  Thus a modular-gauge principal-minor
+representation of \eqref{eq:separation-values} would yield a
+positive-semidefinite matrix $K$ and a scalar $\lambda>0$ satisfying
+\begin{gather}
+ K[3]=K[4]=K[13]=K[14]=K[34]=K[134]=K[234]=\lambda,
+ \label{eq:canonical-minors-one}\\
+ K[23]=K[24]=4\lambda,\qquad K[12]=16\lambda,
+ \label{eq:canonical-minors-two}
+\end{gather}
+because the exact invariants are $(1,1,4,4,16)$.
+
+Let $R=K_{\{3,4\},\{3,4\}}$.  Equations
+\eqref{eq:canonical-minors-one} give
+\[
+ R=\begin{pmatrix}\lambda&r\\r&\lambda\end{pmatrix},
+ \qquad \det R=\lambda,
+ \qquad r^2=\lambda^2-\lambda.
+\]
+Hence $\lambda\geq1$ and $R$ is positive definite.  For $i=1,2$, write
+\[
+ K_{i,\{3,4\}}=R\beta_i,
+ \qquad s_i=K_{ii}-\beta_i^{\mathsf T}R\beta_i.
+\]
+Schur complements give $s_1=s_2=1$.  If
+$\beta_i=((\beta_i)_3,(\beta_i)_4)$, direct expansion of the two-by-two
+minors gives
+\[
+ K[i3]=\lambda s_i+\lambda(\beta_i)_4^2,
+ \qquad
+ K[i4]=\lambda s_i+\lambda(\beta_i)_3^2.
+\]
+It follows that $\beta_1=0$ and $K_{11}=1$, while
+$| (\beta_2)_3|^2=|(\beta_2)_4|^2=3$.  Therefore
+\[
+ K_{22}=1+\beta_2^{\mathsf T}R\beta_2
+ \leq1+6\lambda+6|r|
+ \leq1+12\lambda.
+\]
+For every value of the unconstrained entry $K_{12}$,
+\[
+ K[12]=K_{11}K_{22}-K_{12}^2
+ \leq1+12\lambda<16\lambda,
+\]
+contradicting \eqref{eq:canonical-minors-two}.  Notice that the other five
+principal minors were left completely free.
+\end{proof}
+
+Proposition~\ref{prop:separation} rules out the natural simultaneous
+common-matrix reduction, not every possible indirect use of a
+principal-minor inequality.  Its exact arithmetic is included in the
+certificate manifest.
+
+\section{Relation to adjacent results and open problems}
+
+The closest classical input is additive Ingleton for linear rank functions
+\cite{Ingleton1971}.  The proof above needs a valuated form because ordinary
+support ranks do not record relative coefficient-vanishing rates.
+
+Hall and Johnson studied bounded ratios of products of principal minors
+\cite{HallJohnson2008}.  Boege and Bouthat recently proved that the infimum of
+the Ingleton ratio over $4\times4$ positive definite matrices is $16/27$;
+Sendov independently proved the reciprocal sharp supremum formulation
+\cite{BoegeBouthat2026,Sendov2026}.  Their domain and evaluations are different from
+those of Theorem~\ref{thm:main}.  After relabelling, the ten subsets follow
+the same combinatorial Ingleton pattern, so this is the main collision risk.
+Here, however, the input is an arbitrary nonnegative Lorentzian quadratic in
+any number of variables, the four sets may overlap, and the ten quantities are
+regularized polynomial evaluations.  No simultaneous representation of
+these ten values as scalar principal minors of one fixed $4\times4$ matrix
+exists in general, even up to a positive ratio-neutral modular rescaling, by
+Proposition~\ref{prop:separation}.  The proposition does not exclude a more
+indirect implication.  Neither result is asserted to imply the other.
+
+Al Ahmadieh, Rinc\'on, Vinzant, and Yu characterized tropicalized principal
+minors and developed coefficient inequalities valid for Lorentzian
+polynomials \cite{AlAhmadiehRinconVinzantYu2025}.  In our dated statement-level
+search, no theorem there matched the regularized ten-evaluation bound above.
+
+The following questions remain open.
+\begin{enumerate}
+\item Determine the optimal value of $c_2^\star$, or any explicit positive lower
+bound.
+\item Decide whether an analogous degree-only bound holds for Lorentzian
+polynomials of degree three.
+\item Identify natural subclasses for which the sharp constant is $1$.
+\end{enumerate}
+
+The repository's dated novelty audit records the databases and queries used
+to search for a matching theorem.  Failure to find a match is evidence about
+that search, not a mathematical proof of priority.
+
+\paragraph{Verification provenance.}
+The argument was developed with computer-assisted exploration and repeated
+adversarial proof review.  The exact-arithmetic programs in the repository
+check conventions, the finite witness, the principal-minor separation, and a
+bounded rank-two valuation grid; no finite enumeration is used in place of the
+general proof above.
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}

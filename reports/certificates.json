@@ -1,0 +1,156 @@
+{
+  "finite_valuated_rank_two_audit": {
+    "certificate_stream_sha256": "9eb0e7e8d5edf3cde90e21556308bb5475e8039243bb779a2f5233cb1b8a8321",
+    "input_lambda_cases": 5787,
+    "lambda_values": [
+      1,
+      2,
+      3
+    ],
+    "maximum_gap": 9,
+    "minimum_gap": 0,
+    "negative_ingleton_gaps": 0,
+    "pair_order": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "scope": "Finite n=4 convention regression only. The general theorem uses rank-two realization and the module-length proof.",
+    "valuated_rank_two_inputs": 1929,
+    "valuation_alphabet": [
+      0,
+      1,
+      2,
+      3,
+      "inf"
+    ]
+  },
+  "principal_minor_model_separation": {
+    "A": [
+      0
+    ],
+    "B": [
+      1
+    ],
+    "C": [],
+    "D": [
+      0,
+      1
+    ],
+    "V": [
+      "16/9",
+      "4/9",
+      "16/9",
+      "4/9",
+      "16/9",
+      "4/9",
+      "4/9",
+      "16/9",
+      "16/9",
+      "16/9"
+    ],
+    "V_order": [
+      "AB",
+      "AC",
+      "AD",
+      "BC",
+      "BD",
+      "A",
+      "B",
+      "ABC",
+      "ABD",
+      "CD"
+    ],
+    "canonical": [
+      "1",
+      "1",
+      "4",
+      "4",
+      "16"
+    ],
+    "certificate_stream_sha256": "860c9ae48e6e9b616771ec9d22a926e44f1d3c9822a1b883720c60b1c130b1df",
+    "epsilon": "1/3",
+    "f": "x0*x1",
+    "gap": "3",
+    "ratio": "1",
+    "scope": "Rules out a simultaneous common-scalar plus diagonal modular-gauge 4x4 PSD principal-minor representation; it does not rule out an indirect use of principal-minor inequalities.",
+    "separator_bound": "13",
+    "target_h": "16"
+  },
+  "provenance": {
+    "paper_main_tex_sha256": "b08f16bff3328fbd6ba2891eeeef1e3ef02371f2a505991f8b1c680ee6af4e72",
+    "paper_references_bib_sha256": "4dcff531521c283cb60bc961e12f27c942e2f37696a7c0cfdac664e03e4099a7",
+    "reproduce_py_sha256": "32e3fab9747c756410c17d5b97486c8f9bc498fbf2059d81d2973d77d80055eb",
+    "runtime": "Python >=3.11; standard library only"
+  },
+  "schema": "lorentzian-ingleton-quadratics-certificates-v2",
+  "theorem_scope": "The computations certify formulas and finite conventions; they do not replace the proof of the uniform positive lower bound.",
+  "upper_bound": {
+    "convergence_samples": [
+      {
+        "epsilon": "1/65536",
+        "ratio": "1151375679760487544161993156626743807199200025995873/1309813763635875854527900038158486602837796044630625",
+        "scale": 4
+      },
+      {
+        "epsilon": "1/100000000",
+        "ratio": "56463530224166660813706944671393808524457821230392633574135670634124516691436138846041/68294352847343597703855936843361845380306408229328248451860978507384414191436138846041",
+        "scale": 10
+      },
+      {
+        "epsilon": "1/10000000000000000",
+        "ratio": "3410222375694527479206227693938222747270441695263893349469687687215766549413227103309480929360927456016922854703490024900328225978091140238984628837411955714677729280109739369/4219448638301506129878760745099994037612050642527124004733043339540034069746331373878782950969768159600348856013916909533879145043633137495500403837411955714677729280109739369",
+        "scale": 100
+      },
+      {
+        "epsilon": "1/1000000000000000000000000",
+        "ratio": "32841330471595248734716159773657162199961846034560439047664186664508171878384214515153004865393239030179001630664681125513844329589914980837316417314325722146455658817157947844694778377990957290083662796206869509549983747559841735692949245550633600850480109739369/40696007041097115113077287605603572483491450510282919852662284026404016463678971251729218371411643285311953203272240469734401243213390747180030571297821952853152758286476630614707975047280394874155286583586842074707733747559841735692949245550633600850480109739369",
+        "scale": 1000
+      }
+    ],
+    "finite_rational_witness": {
+      "L": 4,
+      "below_nine_tenths": true,
+      "epsilon": "1/65536",
+      "ratio": "1151375679760487544161993156626743807199200025995873/1309813763635875854527900038158486602837796044630625",
+      "x": "16/9"
+    },
+    "optimized_limit": {
+      "decimal_display": "0.8068623977070366",
+      "display": "(-107+51*sqrt(17))/128",
+      "ratio": {
+        "rational": "-107/128",
+        "sqrt17_coefficient": "51/128"
+      },
+      "x_star": {
+        "rational": "3/4",
+        "sqrt17_coefficient": "1/4"
+      }
+    },
+    "rational_parameter_limit": {
+      "ratio": "390625/484128",
+      "x": "16/9"
+    }
+  }
+}
