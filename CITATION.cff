@@ -3,7 +3,15 @@ message: "If you use this research note or its certificates, cite this repositor
 title: "Explicit Uniform Ingleton Bounds for Nonnegative Lorentzian Quadratics"
 type: software
 authors:
-  - family-names: "guangxiangdebizi"
+  - family-names: "Chen"
+    given-names: "Xingyu"
+    affiliation: "Shanghai University of Electric Power"
+  - family-names: "Sun"
+    given-names: "Yifei"
+    affiliation: "Shanghai University of Electric Power"
+  - family-names: "Zhu"
+    given-names: "Xiaojing"
+    affiliation: "Shanghai University of Electric Power"
 repository-code: "https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics"
 url: "https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics"
 license: MIT

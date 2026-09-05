@@ -213,7 +213,7 @@
   "provenance": {
     "explicit_floor_py_sha256": "889afe01a8445bd4af17977e148e79120421c135e4b9e4823c824417322f4e65",
     "hostile_audit_py_sha256": "cee9a40c6f2b70ed2c806106ffd8b3cc1c1e85b918013a80d0b829cb35c933dd",
-    "paper_main_tex_sha256": "800ccea057f6fd5b3d14f072d5bc3c1d57042b2bd8de572fc36899f6622f0bbf",
+    "paper_main_tex_sha256": "40de10e5bf6f4d844b4c83ff30b18031ac4af1a331005a9314d0afa7913a8529",
     "paper_references_bib_sha256": "4dcff531521c283cb60bc961e12f27c942e2f37696a7c0cfdac664e03e4099a7",
     "reproduce_py_sha256": "82ebd72d65008fae449a28ff1adce88a8d4f434d810246ceae79834dac32fd56",
     "runtime": "Python >=3.11; standard library only",

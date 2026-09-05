@@ -2,6 +2,11 @@
 
 [![exact-certificates](https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics/actions/workflows/ci.yml/badge.svg)](https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics/actions/workflows/ci.yml)
 
+**Authors:** Xingyu Chen, Yifei Sun, Xiaojing Zhu (alphabetical by family name).
+All authors are affiliated with Shanghai University of Electric Power,
+Shanghai, China. No equal-contribution or corresponding-author designation
+is assigned.
+
 This repository contains a self-contained research note and exact certificates
 for the following result.
 
