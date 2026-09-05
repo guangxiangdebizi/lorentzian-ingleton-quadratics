@@ -18,6 +18,9 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Iterable, Mapping, Sequence
 
+import explicit_floor
+import hostile_audit
+
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_VALUATED_HASH = (
@@ -471,22 +474,38 @@ def build_report() -> dict:
     paper_path = ROOT / "paper" / "main.tex"
     bibliography_path = ROOT / "paper" / "references.bib"
     return {
-        "schema": "lorentzian-ingleton-quadratics-certificates-v2",
+        "schema": "lorentzian-ingleton-quadratics-certificates-v3",
         "provenance": {
             "reproduce_py_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
             "paper_main_tex_sha256": hashlib.sha256(paper_path.read_bytes()).hexdigest(),
             "paper_references_bib_sha256": hashlib.sha256(
                 bibliography_path.read_bytes()
             ).hexdigest(),
+            "explicit_floor_py_sha256": hashlib.sha256(
+                (ROOT / "src" / "explicit_floor.py").read_bytes()
+            ).hexdigest(),
+            "hostile_audit_py_sha256": hashlib.sha256(
+                (ROOT / "src" / "hostile_audit.py").read_bytes()
+            ).hexdigest(),
+            "test_reproduce_py_sha256": hashlib.sha256(
+                (ROOT / "tests" / "test_reproduce.py").read_bytes()
+            ).hexdigest(),
+            "test_explicit_floor_py_sha256": hashlib.sha256(
+                (ROOT / "tests" / "test_explicit_floor.py").read_bytes()
+            ).hexdigest(),
             "runtime": "Python >=3.11; standard library only",
         },
         "theorem_scope": (
             "The computations certify formulas and finite conventions; they do "
-            "not replace the proof of the uniform positive lower bound."
+            "not replace the proof of the explicit universal lower bound "
+            "476656^(-5). Exact input certification is for rational data; "
+            "the symbolic theorem applies to real coefficients."
         ),
         "upper_bound": upper_bound_report(),
         "principal_minor_model_separation": principal_minor_separation_report(),
         "finite_valuated_rank_two_audit": valuated_rank_two_report(),
+        "explicit_quadratic_floor": explicit_floor.build_report(),
+        "independent_explicit_floor_audit": hostile_audit.build_report(),
     }
 
 

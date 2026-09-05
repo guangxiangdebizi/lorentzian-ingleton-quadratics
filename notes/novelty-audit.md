@@ -2,6 +2,13 @@
 
 Audit date: **2026-08-27**
 
+Revision clarification, **2026-09-05**: the original dated search below is
+retained as a historical record. The explicit `476656^(-5)` floor and its
+finite spherical-to-ultrametric construction were developed and internally
+audited offline; no new literature search or priority certification was
+performed for that strengthening. Absence of a matching statement below
+does not exclude an indirect implication from existing theorems.
+
 ## Claim checked
 
 The searched claim was the following precise statement, not the broad phrase
@@ -64,8 +71,8 @@ Crossref returned information-theoretic stability papers and unrelated uses of
 
 After relabelling the four sets, the ten-subset pattern in the 2026
 principal-minor theorem is the same combinatorial Ingleton pattern used here.
-This makes it the main collision risk.  To imply the present theorem, however,
-one would need to encode all ten regularized polynomial evaluations as scalar
+This makes it the main collision risk.  The most direct transfer route would
+encode all ten regularized polynomial evaluations as scalar
 principal minors of one common `4 x 4` positive-definite matrix, up to a
 modular rescaling whose factors cancel from the ratio.  No such simultaneous
 encoding exists in general.  The note proves this with the exact input

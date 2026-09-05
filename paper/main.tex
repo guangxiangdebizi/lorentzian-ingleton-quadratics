@@ -21,9 +21,9 @@
 \newcommand{\one}{\mathbf{1}}
 \newcommand{\unionword}[2]{#1#2}
 
-\title{Uniform Ingleton Bounds for Nonnegative Lorentzian Quadratics}
+\title{Explicit Uniform Ingleton Bounds for\\Nonnegative Lorentzian Quadratics}
 \author{guangxiangdebizi}
-\date{27 August 2026}
+\date{5 September 2026}
 
 \begin{document}
 \maketitle
@@ -35,20 +35,23 @@ subset $S$ of its variables, put
  V_\varepsilon(S)=f(\one_S+\varepsilon\one_E),\qquad \varepsilon>0.
 \]
 We prove that if $f$ is Lorentzian, then the multiplicative Ingleton ratio
-formed from the ten values $V_\varepsilon(S)$ is bounded below by a universal
-positive constant.  The constant is independent of the number of variables,
-the polynomial, four arbitrary and possibly overlapping subsets, and the
-regularization parameter.  The proof reduces to sixteen membership atoms,
-uses semialgebraic curve selection to tropicalize a hypothetical vanishing
-sequence, realizes the resulting rank-two valuated matroid over a discretely
-valued field, and places all ten tropical evaluations in a single
-finite-length module.  The ordinary Ingleton inequality for module lengths
-then rules out positive ratio valuation.  We also construct an exact
-five-vector determinantal family showing that the optimal constant is at most
+formed from the ten values $V_\varepsilon(S)$ is at least $476656^{-5}$.
+The bound is independent of the number of variables, the polynomial, four
+arbitrary and possibly overlapping subsets, and the regularizer.  After
+compression to sixteen membership atoms and polarization to at most
+thirty-two clones, a row-sum normalization expresses the coefficients as
+weighted squared distances on a sphere.  A minimum-bottleneck ultrametric
+approximates these distances with controlled distortion.  Its rank-two
+valuated template satisfies max-product Ingleton through one common
+finite-length module; comparison of sums with maxima gives the explicit
+constant.  For rational coefficients the finite comparator is constructible
+using exact rational arithmetic, including singular inputs.  An alternative
+semialgebraic degeneration proof recovers qualitative positivity.  An exact
+five-vector determinantal family gives the upper bound
 \[
  \frac{-107+51\sqrt{17}}{128}=0.806862397707\ldots.
 \]
-The proof is non-effective and does not determine the optimal constant.
+The explicit lower bound is not asserted sharp.
 \end{abstract}
 
 \section{Statement}
@@ -88,27 +91,38 @@ where the infimum ranges over exactly the data just specified: finite $E$,
 nonzero nonnegative Lorentzian quadratics $f$, arbitrary subsets
 $A,B,C,D\subseteq E$, and $\varepsilon>0$.
 
-\begin{theorem}[Uniform degree-two bound]
+\begin{theorem}[Explicit uniform degree-two bound]
 \label{thm:main}
-The optimal constant in \eqref{eq:optimal-constant} satisfies $c_2^\star>0$.
+The optimal constant in \eqref{eq:optimal-constant} satisfies
+\[
+ 476656^{-5}\leq c_2^\star
+ \leq\frac{-107+51\sqrt{17}}{128}.
+\]
 \end{theorem}
 
-The proof gives existence but no effective value.  The following construction
-gives a strict upper bound.
+The lower bound is approximately $4.0642\cdot10^{-29}$; no sharpness is
+claimed.  The lower-bound proof works directly with the actual coefficients,
+without a compactness argument.  The following construction gives the upper
+bound in the theorem.
 
 \begin{proposition}[Exact upper-bound family]
 \label{prop:upper}
 The best possible constant in Theorem~\ref{thm:main} satisfies
 \[
- 0<c_2^\star\leq \frac{-107+51\sqrt{17}}{128}.
+ c_2^\star\leq \frac{-107+51\sqrt{17}}{128}.
 \]
 \end{proposition}
 
 Classical Ingleton says that a rank function obtained from linear subspaces
 satisfies an additive five-against-five inequality
 \cite{Ingleton1971}.  Theorem~\ref{thm:main} is not a direct application:
-the coefficients of $f$ and the regularizer may approach zero at unrelated
-rates.  Controlling this simultaneous degeneration is the main point.
+the coefficients of $f$ and the regularizer may have unrelated scales.
+The finite-scale spherical-to-ultrametric comparison controls all these
+scales at once.  Section~\ref{sec:alternative} retains an alternative
+qualitative proof by degeneration.  Its membership compression,
+polarization, rank-two realization and common-module mechanism are shared
+with the explicit proof; the quantitative addition is the finite coefficient
+comparator, not a new proof of ordinary linear Ingleton.
 
 \section{Fixed-dimensional reduction}
 
@@ -135,7 +149,8 @@ The ratio is unchanged by multiplying $q$ by a positive scalar, so normalize
  q(\one)=\sum_\alpha c_\alpha=1.
  \label{eq:normalization}
 \end{equation}
-The nonnegative coefficient simplex satisfying \eqref{eq:normalization},
+For the alternative proof below, note that the nonnegative coefficient
+simplex satisfying \eqref{eq:normalization},
 intersected with the closed condition that the Hessian has at most one
 positive eigenvalue, is compact and semialgebraic.
 
@@ -164,7 +179,289 @@ and the common factor cancels in \eqref{eq:ratio}.  By
 Consequently a sequence on which the ratio tends to zero must have
 $\delta\to0$.
 
-\section{A valuated rank-two limit}
+\section{A finite coefficient comparator}
+\label{sec:comparator}
+
+Introduce two clones $i^0,i^1$ of each compressed variable and polarize
+\[
+ q(y)=\sum_i c_{ii}y_i^2+\sum_{i<j}c_{ij}y_iy_j
+\]
+by the exact formula
+\begin{equation}
+ \widetilde q(z)=\sum_i c_{ii}z_{i^0}z_{i^1}
+ +\sum_{i<j}\frac{c_{ij}}4
+       (z_{i^0}+z_{i^1})(z_{j^0}+z_{j^1}).
+ \label{eq:polarization}
+\end{equation}
+Both clones retain the same membership pattern, and setting them both to
+$y_i$ recovers $q$ exactly.  Let $B=\nabla^2\widetilde q$, so $B$ is symmetric,
+entrywise nonnegative and zero-diagonal, with
+$\widetilde q(z)=\sum_{i<j}B_{ij}z_iz_j$ when clones are indexed singly.
+In the orthonormal symmetric clone basis
+$(e_{i^0}+e_{i^1})/\sqrt2$, its block is $\nabla^2q/2$; each antisymmetric
+clone vector is an eigenvector with eigenvalue $-c_{ii}$.  Thus $B$ has at
+most one positive eigenvalue, including when some $c_{ii}$ vanish.
+
+Delete the zero rows of $B$, which do not affect any evaluation, and write
+$N$ for its remaining size.  Since $q$ is nonzero,
+\begin{equation}
+ 2\leq N\leq32.
+ \label{eq:clone-count}
+\end{equation}
+The remaining matrix is nonzero and has exactly one positive eigenvalue.
+
+\begin{lemma}[Row-sum spherical representation]
+\label{lem:sphere}
+Let $B$ be symmetric, entrywise nonnegative, zero-diagonal, without zero
+rows, and with at most one positive eigenvalue.  Put
+$s=B\one$ and $T=\one^{\mathsf T}B\one$.  There are unit Euclidean vectors
+$x_i$ such that
+\begin{equation}
+ B_{ij}=\frac{s_is_j}{2T}\|x_i-x_j\|^2,
+ \qquad s_i>0,\quad T>0.
+ \label{eq:sphere}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We claim that $K=ss^{\mathsf T}/T-B$ is positive semidefinite.  Given $v$,
+write $v=\beta\one+w$, where $\beta=(\one^{\mathsf T}Bv)/T$, so
+$\one^{\mathsf T}Bw=0$.  If $w^{\mathsf T}Bw>0$, the span of $\one$ and $w$
+would be a positive-definite two-plane for $B$, contradicting the inertia
+assumption.  Expansion therefore gives
+\[
+ v^{\mathsf T}Kv=-w^{\mathsf T}Bw\geq0.
+\]
+Take a Gram factorization $K_{ij}=\langle u_i,u_j\rangle$.
+Since $B_{ii}=0$, we have $\|u_i\|=s_i/\sqrt T>0$.
+The unit vectors $x_i=\sqrt T\,u_i/s_i$ satisfy
+\[
+ B_{ij}=\frac{s_is_j}{T}(1-\langle x_i,x_j\rangle),
+\]
+which is \eqref{eq:sphere}.  No invertibility or strict negative inertia
+was used.
+\end{proof}
+
+\begin{lemma}[Ultrametric comparison]
+\label{lem:ultrametric}
+Under the hypotheses of Lemma~\ref{lem:sphere}, there are a
+pseudoultrametric $u_{ij}$ and coefficients
+\begin{equation}
+ C_{ij}=\frac{s_is_j}{2T}u_{ij}^2
+ \quad\hbox{such that}\quad
+ C_{ij}\leq B_{ij}\leq(N-1)^2C_{ij}.
+ \label{eq:comparison}
+\end{equation}
+In particular $C_{ij}=0$ if and only if $B_{ij}=0$.
+\end{lemma}
+
+\begin{proof}
+Put $d_{ij}=\|x_i-x_j\|$ and define the minimum-bottleneck path distance
+\[
+ u_{ij}=\min_{i=i_0,\ldots,i_k=j}\,
+             \max_{0\leq r<k}d_{i_ri_{r+1}}.
+\]
+Deleting cycles never increases a path bottleneck, so the minimum is
+attained by a simple path with at most $N-1$ edges.  The one-edge path and
+the ordinary triangle inequality give
+\[
+ u_{ij}\leq d_{ij}\leq(N-1)u_{ij}.
+\]
+Concatenating paths gives
+$u_{ij}\leq\max(u_{ik},u_{kj})$.  Zero distances are allowed: a zero
+bottleneck path has coincident endpoints by the triangle inequality.
+Squaring the displayed comparison and using \eqref{eq:sphere} proves
+\eqref{eq:comparison}.  Equivalently, $u$ is the maximum edge length along
+paths in a minimum spanning tree; tied or zero edge lengths cause no change
+in the argument.
+\end{proof}
+
+\section{Max-product Ingleton and the explicit bound}
+\label{sec:explicit-bound}
+
+We first record the algebraic inequality shared by both proofs.
+
+\begin{lemma}[Module-length Ingleton]
+\label{lem:module-ingleton}
+Let $Q$ be a finite-length module and let $A,B,C,D$ be four submodules.  If
+$h(S)$ is the length of the sum of the submodules named by $S$, then
+\begin{align}
+ &h(AB)+h(AC)+h(AD)+h(BC)+h(BD)\notag\\
+ &\qquad\geq h(A)+h(B)+h(ABC)+h(ABD)+h(CD).
+ \label{eq:ingleton}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ I(A;B)=h(A)+h(B)-h(AB)=\length(A\cap B)
+\]
+and define
+\[
+ I(A;B\mid C)=h(AC)+h(BC)-h(C)-h(ABC).
+\]
+Put $Z=A\cap B$.  Modularity of length gives
+\begin{align*}
+ I(A;B\mid C)&\geq\length(Z)-\length(Z\cap C),\\
+ I(A;B\mid D)&\geq\length(Z)-\length(Z\cap D),\\
+ I(C;D)&=\length(C\cap D).
+\end{align*}
+Moreover,
+\[
+ \length(Z\cap C)+\length(Z\cap D)
+ \leq\length(Z)+\length(C\cap D),
+\]
+because the sum of the two intersections lies in $Z$ and their intersection
+lies in $C\cap D$.  Thus
+\[
+ I(A;B\mid C)+I(A;B\mid D)+I(C;D)\geq I(A;B),
+\]
+which expands to \eqref{eq:ingleton}.
+\end{proof}
+
+For a label set $J$, let $S_J$ be the clone indices whose membership pattern
+intersects $J$, and put $z_J(i)=1$ on $S_J$, $z_J(i)=\delta$ otherwise.
+For the template of Lemma~\ref{lem:ultrametric}, set
+\[
+ m(J)=\max_{i<j}C_{ij}z_J(i)z_J(j).
+\]
+Every $m(J)$ is positive, because $B$ has a positive pair and $\delta>0$.
+
+\begin{lemma}[Max-product template inequality]
+\label{lem:max-product}
+For four arbitrary and possibly overlapping clone subsets,
+\begin{equation}
+ \frac{m(AB)m(AC)m(AD)m(BC)m(BD)}
+      {m(A)m(B)m(ABC)m(ABD)m(CD)}\geq1.
+ \label{eq:max-product}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $a_i=s_i/\sqrt T$, $\lambda=-\log\delta>0$, and, for positive pairs,
+\[
+ p_{ij}=-\log C_{ij}=\alpha_i+\alpha_j+h_{ij},\qquad
+ \alpha_i=-\log a_i+\tfrac12\log2,\qquad
+ h_{ij}=-2\log u_{ij}.
+\]
+Zero-distance indices form parallel classes.  On their quotient, the
+ultrametric defines a finite rooted cluster tree: $h_{ij}$ is the height of
+the last common ancestor of $i,j$, and finite heights increase strictly
+from a node to a proper descendant node.  This gives a realizable rank-two
+valuation.  We provide the construction, including the real-parameter step.
+
+First suppose that all distinct node heights, leaf potentials $\alpha_i$,
+and $\lambda$ are rational, and clear all denominators by the same positive
+integer $L$.  At each internal node $v$ of height $h_v$, assign distinct
+rational residues to its children.  For a leaf $i$, form the finite Laurent
+sum $X_i$ of the residues on its root-to-leaf path, using the monomial
+$t^{Lh_v}$ at node $v$.  Two different classes first differ at their last
+common ancestor; the residue difference there is nonzero and all later
+exponents are larger.  Consequently
+\[
+ \operatorname{val}(X_i-X_j)=Lh_{ij}.
+\]
+Give members of one zero-distance class the same $X_i$.  Over
+$\K=\R((t))$, the columns
+\[
+ v_i=t^{L\alpha_i}(1,X_i)
+\]
+therefore have determinant valuation $Lp_{ij}$ on positive pairs and zero
+determinant on parallel pairs.  Negative heights or potentials merely give
+finitely many negative Laurent exponents.
+
+Let $\OO=\R[[t]]$, $\Lambda=L\lambda\in\mathbb Z_{>0}$, and
+\[
+ L_0=\sum_i\OO v_i,\qquad
+ L_S=L_0+\sum_{i\in S}\OO t^{-\Lambda}v_i.
+\]
+There are at least two different classes, so $L_0$ is a full lattice in
+$\K^2$.  All quotients $L_S/L_0$ lie in the single finite-length module
+$Q=t^{-\Lambda}L_0/L_0$.  Define
+\[
+ r(S)=\max_{i<j:\,C_{ij}>0}
+        \{\lambda|\{i,j\}\cap S|-p_{ij}\}.
+\]
+The determinant ideal of $L_S$ is generated by pairs of its displayed
+generators.  Scaling each selected source column gives its minimal
+determinant valuation, whereas using two copies of the same source column
+gives determinant zero.  Thus
+\[
+ \operatorname{val}(\bigwedge^2L_S)=-Lr(S).
+\]
+Smith normal form now gives
+\begin{equation}
+ \length_\OO(L_S/L_0)=L\bigl(r(S)-r(\varnothing)\bigr).
+ \label{eq:explicit-length}
+\end{equation}
+For each label $\mathsf X$ use the submodule $L_{S_{\mathsf X}}/L_0$.
+Their sums are precisely $L_{S_J}/L_0$, including for overlapping labels.
+Lemma~\ref{lem:module-ingleton}, proved independently of any
+quantitative bound, shows that $r(S_J)$ satisfies additive Ingleton.
+Since
+\[
+ \log m(J)=-2\lambda+r(S_J),
+\]
+the common constants cancel five against five, proving
+\eqref{eq:max-product} in the rational-parameter case.
+
+For arbitrary real parameters, keep the finite cluster tree and its exact
+zero classes fixed.  Approximate its distinct heights and leaf potentials
+by rational numbers, preserving all strict ancestor orders, and approximate
+$\lambda$ by positive rationals.  Each finite $r(S)$ is a maximum of
+finitely many continuous affine expressions, so the rational inequalities
+pass to the limit.  This argument uses ordinary discrete module lengths for
+each approximant, not a length over a nondiscrete valuation ring.
+\end{proof}
+
+\begin{proof}[Proof of the lower bound in Theorem~\ref{thm:main}]
+There are at most $M=\binom N2$ clone-pair monomials.  Equation
+\eqref{eq:comparison} gives, for each of the ten queries,
+\[
+ m(J)\leq\widetilde q(z_J)\leq M(N-1)^2m(J).
+\]
+Use the lower estimate for each numerator factor and the upper estimate for
+each denominator factor, and apply Lemma~\ref{lem:max-product}.  Exact
+diagonal recovery and the homogeneous regularizer normalization give
+\[
+ \mathcal R_f=\mathcal R_{\widetilde q}
+ \geq\left[\binom N2(N-1)^2\right]^{-5}
+ \geq(496\cdot961)^{-5}=476656^{-5}.
+\]
+No limiting argument on the original coefficients is required.  The upper
+bound in the theorem is proved in Proposition~\ref{prop:upper}.
+\end{proof}
+
+\begin{remark}[Exact rational construction and its scope]
+\label{rem:rational}
+For rational input coefficients, compression, polarization, $s,T$ and
+\[
+ d_{ij}^2=\frac{2TB_{ij}}{s_is_j}
+\]
+are rational.  Finite minima and maxima commute with squaring on nonnegative
+numbers, so a rational minimum-bottleneck computation directly gives
+$u_{ij}^2$ and $C_{ij}=s_is_ju_{ij}^2/(2T)$.  Admissibility is also exactly
+testable: for a nonzero symmetric nonnegative zero-diagonal $B$, the
+one-positive-eigenvalue condition is equivalent to
+$ss^{\mathsf T}/T-B\succeq0$.  The reverse direction follows from its
+decomposition as a rank-one positive matrix minus a PSD matrix and $T>0$.
+Rational symmetric Schur elimination tests this PSD condition, accepting a
+zero-diagonal remainder only if the entire remainder is zero.  Thus neither
+floating eigenvectors nor logarithms are needed to construct and certify
+the comparator on rational data.  The theorem holds for real coefficients;
+we do not assert an exact finite decision oracle for arbitrary black-box
+real inputs, nor do we compute the optimal constant.
+\end{remark}
+
+\section{Alternative qualitative proof by degeneration}
+\label{sec:alternative}
+
+For comparison, the following argument proves $c_2^\star>0$ without
+evaluating a constant.  It retains the earlier semialgebraic route and is
+not needed for the explicit coefficient comparison above.
+
+\subsection{A valuated rank-two limit}
 
 Assume, for contradiction, that the infimum in
 Theorem~\ref{thm:main} is zero.  The graph of the ratio over the compact
@@ -192,21 +489,10 @@ the arc,
  \label{eq:positive-valuation}
 \end{equation}
 
-For every atom $i$, introduce two clones $i^0,i^1$, and polarize
-\[
- q(y)=\sum_i c_{ii}y_i^2+\sum_{i<j}c_{ij}y_iy_j
-\]
-to
-\begin{equation}
- \widetilde q(z)=
- \sum_i c_{ii}z_{i^0}z_{i^1}
- +\sum_{i<j}\frac{c_{ij}}4
- (z_{i^0}+z_{i^1})(z_{j^0}+z_{j^1}).
- \label{eq:polarization}
-\end{equation}
-Polarization preserves the Lorentzian property
-\cite{BrandenHuh2020}.  Let $p_I$ be the valuation of the coefficient of the
-clone pair $I$.  Br\"and\'en and Huh prove that coefficient valuations of
+Use the exact polarization \eqref{eq:polarization}; its signature preservation
+was checked directly in Section~\ref{sec:comparator}.  Let $p_I$ be the
+valuation of the coefficient of the clone pair $I$.  Br\"and\'en and Huh prove
+that coefficient valuations of
 Lorentzian polynomials are $M$-convex
 \cite[Corollary~3.28]{BrandenHuh2020}.  In the multiaffine degree-two case this
 is exactly the valuated-basis-exchange condition for a rank-two valuated
@@ -235,7 +521,7 @@ are nonnegative, so no cancellation occurs.  Equations
  \label{eq:evaluation-valuation}
 \end{equation}
 
-\section{Rank two over a discrete valuation ring}
+\subsection{Rank two over a discrete valuation ring}
 
 We use the special fact that every rank-two valuated matroid is realizable.
 
@@ -330,48 +616,9 @@ the images of $\pi^{-\lambda}v_e$ for its two clones.  Then
  \label{eq:module-rank}
 \end{equation}
 
-\section{Module-length Ingleton and completion of the proof}
+\subsection{Module-length Ingleton and qualitative completion}
 
-\begin{lemma}[Module-length Ingleton]
-\label{lem:module-ingleton}
-Let $Q$ be a finite-length module and let $A,B,C,D$ be four submodules.  If
-$h(S)$ is the length of the sum of the submodules named by $S$, then
-\begin{align}
- &h(AB)+h(AC)+h(AD)+h(BC)+h(BD)\notag\\
- &\qquad\geq h(A)+h(B)+h(ABC)+h(ABD)+h(CD).
- \label{eq:ingleton}
-\end{align}
-\end{lemma}
-
-\begin{proof}
-Write
-\[
- I(A;B)=h(A)+h(B)-h(AB)=\length(A\cap B)
-\]
-and define
-\[
- I(A;B\mid C)=h(AC)+h(BC)-h(C)-h(ABC).
-\]
-Put $Z=A\cap B$.  Modularity of length gives
-\begin{align*}
- I(A;B\mid C)&\geq\length(Z)-\length(Z\cap C),\\
- I(A;B\mid D)&\geq\length(Z)-\length(Z\cap D),\\
- I(C;D)&=\length(C\cap D).
-\end{align*}
-Moreover,
-\[
- \length(Z\cap C)+\length(Z\cap D)
- \leq\length(Z)+\length(C\cap D),
-\]
-because the sum of the two intersections lies in $Z$ and their intersection
-lies in $C\cap D$.  Thus
-\[
- I(A;B\mid C)+I(A;B\mid D)+I(C;D)\geq I(A;B),
-\]
-which expands to \eqref{eq:ingleton}.
-\end{proof}
-
-Apply the lemma to
+Apply Lemma~\ref{lem:module-ingleton} to
 \[
  H_{\mathsf X}=\sum_{\omega:\,\mathsf X\in\omega}U_\omega,
  \qquad \mathsf X\in\mathcal L.
@@ -391,7 +638,8 @@ Combining this with \eqref{eq:evaluation-valuation},
 \end{align*}
 This contradicts \eqref{eq:positive-valuation}.  Therefore the normalized
 fixed-dimensional semialgebraic family has no sequence with ratio tending to
-zero.  Its infimum is positive, proving Theorem~\ref{thm:main}.
+zero.  Its infimum is positive, recovering the qualitative part of
+Theorem~\ref{thm:main} without evaluating the constant.
 
 \section{The exact upper-bound family}
 
@@ -600,10 +848,10 @@ minors and developed coefficient inequalities valid for Lorentzian
 polynomials \cite{AlAhmadiehRinconVinzantYu2025}.  In our dated statement-level
 search, no theorem there matched the regularized ten-evaluation bound above.
 
-The following questions remain open.
+The following questions are not resolved by this note.
 \begin{enumerate}
-\item Determine the optimal value of $c_2^\star$, or any explicit positive lower
-bound.
+\item Determine the optimal value of $c_2^\star$, or substantially improve the
+explicit lower bound $476656^{-5}$.
 \item Decide whether an analogous degree-only bound holds for Lorentzian
 polynomials of degree three.
 \item Identify natural subclasses for which the sharp constant is $1$.
@@ -616,9 +864,15 @@ that search, not a mathematical proof of priority.
 \paragraph{Verification provenance.}
 The argument was developed with computer-assisted exploration and repeated
 adversarial proof review.  The exact-arithmetic programs in the repository
-check conventions, the finite witness, the principal-minor separation, and a
-bounded rank-two valuation grid; no finite enumeration is used in place of the
-general proof above.
+check conventions, the finite witness, the principal-minor separation, a
+bounded rank-two valuation grid, and the finite spherical-to-ultrametric
+construction.  A separate exact checker enumerates rational coefficient
+matrices with an admissibility gate and measures common lattice-quotient
+dimensions in truncated Laurent coefficient spaces.  These are internal
+regression and adversarial checks, not external peer review; no finite
+enumeration is used in place of the general proof above.  The explicit
+revision was derived offline and does not extend the dated literature
+search or establish a priority claim.
 
 \bibliographystyle{alpha}
 \bibliography{references}

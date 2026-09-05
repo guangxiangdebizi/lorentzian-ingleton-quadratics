@@ -1,4 +1,89 @@
 {
+  "explicit_quadratic_floor": {
+    "all_16_membership_atoms_cases": 8,
+    "arithmetic": "exact fractions.Fraction; decimal strings for presentation only",
+    "assertions": [
+      "exact diagonal polarization recovery for every queried value",
+      "exact symmetric, antisymmetric, mixed polarization congruence blocks",
+      "exact zero support preservation",
+      "coefficient distortion at most (N-1)^2",
+      "bottleneck ultrametric inequalities",
+      "max-product Ingleton for every random instance",
+      "sum/max bounds and explicit final floor",
+      "finite PSD instance has ratio strictly below one"
+    ],
+    "finite_psd_witness": {
+      "epsilon": "1/10000000000000000",
+      "max_ratio": "1.7777777777777779556",
+      "ratio": "0.80821516459251794140"
+    },
+    "large_case_samples": [
+      {
+        "active_clones": 32,
+        "case": 0,
+        "epsilon": "1/536870912",
+        "max_ratio": "107.32987364715871454",
+        "ratio": "462.89513592332636798"
+      },
+      {
+        "active_clones": 32,
+        "case": 1,
+        "epsilon": "1/8388608",
+        "max_ratio": "1",
+        "ratio": "1.0293684903641182995"
+      },
+      {
+        "active_clones": 32,
+        "case": 2,
+        "epsilon": "1/524288",
+        "max_ratio": "179.19910483549889726",
+        "ratio": "160.99631947364449231"
+      },
+      {
+        "active_clones": 32,
+        "case": 3,
+        "epsilon": "1/1048576",
+        "max_ratio": "680.73103359702161375",
+        "ratio": "733.68753796787273690"
+      },
+      {
+        "active_clones": 32,
+        "case": 4,
+        "epsilon": "137438953472",
+        "max_ratio": "1.0000000000145519152",
+        "ratio": "1.0000000000130601714"
+      },
+      {
+        "active_clones": 32,
+        "case": 5,
+        "epsilon": "1/32",
+        "max_ratio": "1",
+        "ratio": "1.4587690576796245043"
+      },
+      {
+        "active_clones": 32,
+        "case": 6,
+        "epsilon": "536870912",
+        "max_ratio": "1.0000000037252903019",
+        "ratio": "1.0000000034657641834"
+      },
+      {
+        "active_clones": 32,
+        "case": 7,
+        "epsilon": "1024",
+        "max_ratio": "1.0009765625",
+        "ratio": "1.0009533312230570181"
+      }
+    ],
+    "largest_active_clone_count": 32,
+    "minimum_random_ratio": "1",
+    "random_cases": 160,
+    "scope_limit": "Finite regression is not a proof or an optimality certificate. See the complete symbolic proof.",
+    "seed": 20260905,
+    "status": "PASS",
+    "universal_constant": "476656^(-5)",
+    "universal_constant_decimal": "4.0641963287590736257E-29"
+  },
   "finite_valuated_rank_two_audit": {
     "certificate_stream_sha256": "9eb0e7e8d5edf3cde90e21556308bb5475e8039243bb779a2f5233cb1b8a8321",
     "input_lambda_cases": 5787,
@@ -45,6 +130,33 @@
       3,
       "inf"
     ]
+  },
+  "independent_explicit_floor_audit": {
+    "arithmetic": "fractions.Fraction only",
+    "independence": "no imports or generated instances from the candidate tests",
+    "integer_inputs": {
+      "accepted": 1317,
+      "accepted_with_loops": 234,
+      "accepted_with_parallel_pairs": 531,
+      "enumerated_matrices": 4096,
+      "negative_controls": "two-positive matrix and zero-pivot indefinite matrix rejected",
+      "query_checks": 3951,
+      "rejected_including_zero": 2779
+    },
+    "laurent_modules": {
+      "ambient_dimension_checks": 24,
+      "direct_quotient_dimension_checks": 384,
+      "method": "exact rational Gaussian rank in one finite Laurent coefficient space",
+      "negative_determinant_valuations": 102,
+      "parallel_class_cases": 12,
+      "tree_cases": 24
+    },
+    "limit": "Finite checks supplement the symbolic audit; they do not prove a universal theorem.",
+    "status": "PASS",
+    "two_clone_boundary": {
+      "all_memberships_and_regularizers": 768,
+      "constant": 1
+    }
   },
   "principal_minor_model_separation": {
     "A": [
@@ -99,13 +211,17 @@
     "target_h": "16"
   },
   "provenance": {
-    "paper_main_tex_sha256": "b08f16bff3328fbd6ba2891eeeef1e3ef02371f2a505991f8b1c680ee6af4e72",
+    "explicit_floor_py_sha256": "889afe01a8445bd4af17977e148e79120421c135e4b9e4823c824417322f4e65",
+    "hostile_audit_py_sha256": "cee9a40c6f2b70ed2c806106ffd8b3cc1c1e85b918013a80d0b829cb35c933dd",
+    "paper_main_tex_sha256": "800ccea057f6fd5b3d14f072d5bc3c1d57042b2bd8de572fc36899f6622f0bbf",
     "paper_references_bib_sha256": "4dcff531521c283cb60bc961e12f27c942e2f37696a7c0cfdac664e03e4099a7",
-    "reproduce_py_sha256": "32e3fab9747c756410c17d5b97486c8f9bc498fbf2059d81d2973d77d80055eb",
-    "runtime": "Python >=3.11; standard library only"
+    "reproduce_py_sha256": "82ebd72d65008fae449a28ff1adce88a8d4f434d810246ceae79834dac32fd56",
+    "runtime": "Python >=3.11; standard library only",
+    "test_explicit_floor_py_sha256": "2f7fa70cd7f04abac34f55c4ab9e46e1e222a45a4200a7912f233cb4ea8db581",
+    "test_reproduce_py_sha256": "5033328d8af3fa6071f878d9a9f03d33eb527b7082acca92e78f3f0573b36b96"
   },
-  "schema": "lorentzian-ingleton-quadratics-certificates-v2",
-  "theorem_scope": "The computations certify formulas and finite conventions; they do not replace the proof of the uniform positive lower bound.",
+  "schema": "lorentzian-ingleton-quadratics-certificates-v3",
+  "theorem_scope": "The computations certify formulas and finite conventions; they do not replace the proof of the explicit universal lower bound 476656^(-5). Exact input certification is for rational data; the symbolic theorem applies to real coefficients.",
   "upper_bound": {
     "convergence_samples": [
       {

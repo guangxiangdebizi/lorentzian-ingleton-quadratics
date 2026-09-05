@@ -1,4 +1,4 @@
-# Uniform Ingleton bounds for Lorentzian quadratics
+# Explicit uniform Ingleton bounds for Lorentzian quadratics
 
 [![exact-certificates](https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics/actions/workflows/ci.yml/badge.svg)](https://github.com/guangxiangdebizi/lorentzian-ingleton-quadratics/actions/workflows/ci.yml)
 
@@ -21,37 +21,48 @@ R_f = V(AB)V(AC)V(AD)V(BC)V(BD)
       V(A)V(B)V(ABC)V(ABD)V(CD)
 ```
 
-Here juxtaposition denotes union. The main theorem proves that there is an
-optimal universal constant `c_2^* > 0`, independent of the number of variables, `f`, the
-four subsets, and `epsilon`, such that
+Here juxtaposition denotes union. The main theorem proves a universal bound,
+independent of the number of variables, `f`, the four subsets and `epsilon`:
 
 ```text
-R_f >= c_2^*.
+R_f >= c_2^* >= 476656^(-5).
 ```
 
-The proof does not produce the optimal constant. An exact five-vector
-determinantal family proves
+Together with an exact five-vector determinantal upper-bound family:
 
 ```text
-0 < c_2^* <= (-107 + 51 sqrt(17))/128
-          = 0.806862397707...
+476656^(-5) <= c_2^* <= (-107 + 51 sqrt(17))/128
+4.0642e-29  <= c_2^* <= 0.806862397707...
 ```
+
+The lower bound is deliberately crude and not asserted sharp. This applies
+to all nonnegative Lorentzian quadratics, not only size-two PSD determinants.
 
 ## Why the proof is not just support Ingleton
 
 The support of a Lorentzian quadratic has rank two, but coefficients and the
 regularizer can degenerate at different rates. A support-only inequality does
-not control such simultaneous limits. The proof instead uses this chain:
+not control such simultaneous limits. The explicit proof instead works at
+the actual coefficient values:
 
 ```text
 16 membership atoms
-  -> semialgebraic curve selection
-  -> a rank-two valuated matroid
-  -> exact realization over a discretely valued field
+  -> at most 32 polarized clones, with exact signature preservation
+  -> weighted squared distances on a sphere by row-sum normalization
+  -> a bottleneck ultrametric with distance distortion at most N-1
+  -> a representable rank-two coefficient template
   -> one finite-length module carrying all ten evaluations
-  -> modular-length Ingleton
-  -> no degeneration can have positive ratio valuation.
+  -> max-product Ingleton
+  -> sum/max comparison: [binom(N,2) (N-1)^2]^(-5).
 ```
+
+For rational coefficients, the input signature gate and the finite
+coefficient comparator use exact rational arithmetic, including singular
+matrices, loops and parallel classes. This is not a decision oracle for
+arbitrary black-box real numbers. The paper retains the earlier
+semialgebraic degeneration argument as an alternative proof of positivity;
+the new finite-scale comparator replaces that argument for the explicit
+bound, rather than changing the existing common-module mechanism.
 
 ## Repository map
 
@@ -63,9 +74,17 @@ not control such simultaneous limits. The proof instead uses this chain:
   not presented as a proof of priority.
 - [`src/reproduce.py`](src/reproduce.py): exact arithmetic reconstruction of
   the finite witness, limiting formula, common-principal-minor separation, and
-  finite valuated-rank-two audit.
+  finite valuated-rank-two audit, plus the two new checker reports.
+- [`src/explicit_floor.py`](src/explicit_floor.py): exact polarization,
+  spherical/ultrametric comparison and multiscale regression.
+- [`src/hostile_audit.py`](src/hostile_audit.py): independent rational input
+  enumeration, singular PSD gate, and directly measured Laurent quotients.
 - [`reports/certificates.json`](reports/certificates.json): generated manifest.
 - [`tests/test_reproduce.py`](tests/test_reproduce.py): regression gates.
+- [`tests/test_explicit_floor.py`](tests/test_explicit_floor.py): explicit
+  bound, provenance, singular support and negative-control gates.
+- [`REVISION_2026-09-05.md`](REVISION_2026-09-05.md): revision scope and
+  locally reproduced checks.
 
 ## Reproduce
 
@@ -89,7 +108,7 @@ used as a substitute for the general proof.
 
 ## Status and claim discipline
 
-- **Proved in the note:** existence of a universal positive constant.
+- **Proved in the note:** the explicit universal floor `476656^(-5)`.
 - **Proved in the note:** the displayed exact upper bound.
 - **Proved in the note:** a two-variable exact obstruction to reducing all ten
   evaluations to principal minors of one common `4 x 4` PSD matrix through a
@@ -99,9 +118,9 @@ used as a substitute for the general proof.
 - **Literature status:** targeted searches through 2026-08-27 found adjacent
   results for linear ranks and principal minors, but no statement matching the
   theorem above. See the novelty audit for queries and distinctions.
-- **Priority wording:** the result is released as *apparently new after a dated
-  search*, not as a proof that no unpublished or differently formulated result
-  exists.
+- **Revision literature status:** the explicit 2026-09-05 argument was
+  developed and audited offline. The old dated search does not establish
+  priority for this revision, and no new literature-priority claim is made.
 
 ## License
 
