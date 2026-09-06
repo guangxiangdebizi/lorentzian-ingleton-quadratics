@@ -1,5 +1,1958 @@
 {
-  "explicit_quadratic_floor": {
+  "clifford_power_audit": {
+    "negative_controls": {
+      "correct_identity_determinant": 49,
+      "negative_diagonal_atom_obstruction_detected": true,
+      "two_positive_hessian_rejected": true,
+      "unsigned_generator_determinant": {
+        "denominator": "1",
+        "numerator": "45"
+      },
+      "unsigned_generator_rejected": true
+    },
+    "noncentered_canonical_checks": [
+      {
+        "T": {
+          "denominator": "1",
+          "numerator": "24"
+        },
+        "all_principal_minors_checked": 7,
+        "rank_K": 1,
+        "unrestricted_real_reconstruction_checks": 5,
+        "variables": 3
+      },
+      {
+        "T": {
+          "denominator": "1",
+          "numerator": "28"
+        },
+        "all_principal_minors_checked": 15,
+        "rank_K": 2,
+        "unrestricted_real_reconstruction_checks": 5,
+        "variables": 4
+      },
+      {
+        "T": {
+          "denominator": "1",
+          "numerator": "227"
+        },
+        "all_principal_minors_checked": 31,
+        "rank_K": 3,
+        "unrestricted_real_reconstruction_checks": 5,
+        "variables": 5
+      }
+    ],
+    "quadratic_examples": 17,
+    "records": [
+      {
+        "boundary_atoms": 0,
+        "matrix_size": 2,
+        "name": "rank_zero",
+        "noncommuting_atoms": false,
+        "rank_K": 0,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "81000162000081",
+              "numerator": "4000036000117000162000081"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1296",
+              "numerator": "7225"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "20250040500020250000000000",
+              "numerator": "20250040500029250009000001"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 3,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 2,
+        "matrix_size": 2,
+        "name": "axis_boundary_r1",
+        "noncommuting_atoms": false,
+        "rank_K": 1,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "1"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "1",
+              "numerator": "250001000001"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "4",
+              "numerator": "81"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "4000000000000",
+              "numerator": "4000004000001"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 4,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 4,
+        "matrix_size": 4,
+        "name": "axis_boundary_r2",
+        "noncommuting_atoms": true,
+        "rank_K": 2,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "54000837005400018711037422043011026244006561",
+              "numerator": "3062594501107006399020695539366043740026244006561"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "4700160000",
+              "numerator": "6380654641"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "104976419904688176598752299376086400013392000864000000",
+              "numerator": "104976419904699840629856331128102384017712001512000049"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "3000021000045000027",
+              "numerator": "7000034500054000027"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "4800",
+              "numerator": "8993"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "27000045000021000003",
+              "numerator": "27000054000034500007"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 6,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 8,
+        "name": "axis_boundary_r3",
+        "noncommuting_atoms": true,
+        "rank_K": 3,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "265626281252000001",
+              "numerator": "32226937501375002000001"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "172944",
+              "numerator": "295297"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1024002048001312000272000000",
+              "numerator": "1024002048001408000384000033"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "250001250002000001",
+              "numerator": "398439156252250001"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "20736",
+              "numerator": "30025"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "128000256000160000032",
+              "numerator": "128000288000212000051"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 8,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 8,
+        "matrix_size": 16,
+        "name": "axis_boundary_r4",
+        "noncommuting_atoms": true,
+        "rank_K": 4,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "11968605291569709200587921932803956004920003400001",
+              "numerator": "42337401139526550672712322149604160005000003400001"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1327881776583",
+              "numerator": "1950708133946"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "31250106250153750123625060400018372503412500361550018915000374",
+              "numerator": "31250106250156250130000067175022260004708500610200043785001323"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "18285846857485714657143",
+              "numerator": "31885902857557143257143"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "238260",
+              "numerator": "359801"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "25510270408224489819591840",
+              "numerator": "25510275510278061258163271"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 10,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 10,
+        "matrix_size": 2,
+        "name": "rational_r1_case0",
+        "noncommuting_atoms": false,
+        "rank_K": 1,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "2514269451243731127808574326543287527462351849",
+              "numerator": "8126248962487894906841228409619726277462351849"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "499706548292677",
+              "numerator": "884893808997007"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "96046990265321552084380219163810435729511309632",
+              "numerator": "96046990265337816468667609124328974213133372245"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "18033963059188271456236784079601",
+              "numerator": "25040167526467816678937300079601"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "412078869133",
+              "numerator": "525997716049"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "8192495811685016952956806189615",
+              "numerator": "8192496730469551030236009315001"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 12,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 4,
+        "name": "rational_r2_case1",
+        "noncommuting_atoms": true,
+        "rank_K": 2,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "13712085832513311262870394498329277620905625057582378465599139450430045475131524530607",
+              "numerator": "56758611798199590680758442615049433089740929791146010491055224782954432350131524530607"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "123106309147784775659226068",
+              "numerator": "225696360171240797841751133"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "572747994898766846861878769109860994599565636435188940560000272767506379233564705",
+              "numerator": "572747994898876423701408161542568456980605723863276552933174711704474202154940052"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "7875341687139982167019849894927741468063979668054440193504261286692916593899653914747897",
+              "numerator": "12494029120619917553192359482524403294101639703771439938321833418607290389600198134747897"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "5640698731212178263265064",
+              "numerator": "7863909371209316477154431"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "190439338778971349204218123188932789905128330921414521803952392554929039196989867760567925",
+              "numerator": "190439371644811743007259324048731204685344947548325190648674188129959001235592251272174758"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 14,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 8,
+        "name": "rational_r3_case2",
+        "noncommuting_atoms": true,
+        "rank_K": 3,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "7344748083386853612777225291460896450490021950025075254341344269654004340679319249",
+              "numerator": "47112451416067699537303537212078978436272418588281985878572838030015319340679319249"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "63816630624999155544938077927219",
+              "numerator": "138428524947091006801753917790414"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "2542985043790030261899889162949601757284636685994179338420158033401292166097819082299",
+              "numerator": "2542985043790484616066242519225234301531609155911852443486882557569733729847864826015"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "43854260010723714477008757519686234157084900508361366609641380849601",
+              "numerator": "223579178232894460220696887421626518836989756196666335843278930849601"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "127445281815157814079202558",
+              "numerator": "445424429499302536466382133"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "190253191868077140174466756693190944018625768472782803468688516923159",
+              "numerator": "190253337576201003734715298077097093738064266423175805122783840760064"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 16,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 10,
+        "matrix_size": 2,
+        "name": "rational_r1_case3",
+        "noncommuting_atoms": false,
+        "rank_K": 1,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "271873998220322243910897",
+              "numerator": "45760548594348680322243910897"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "56082816",
+              "numerator": "111572131"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "9096566632009369425849600000",
+              "numerator": "9096566632010464614214350143"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "908112601108756838511399093320233900499",
+              "numerator": "1493448384153497972288442854512253900499"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "172755117887",
+              "numerator": "252203507712"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "3803972648940214157140722520433913242",
+              "numerator": "3803973417419412976573174953649347375"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 12,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 4,
+        "matrix_size": 4,
+        "name": "rational_r2_case4",
+        "noncommuting_atoms": true,
+        "rank_K": 2,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "2958760384257879703037230756746923816518411038872150895126567058817651698789803209",
+              "numerator": "13007793438505347189729186316306824588745738528568162022986805739142811698789803209"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "2089746568563217440675673292",
+              "numerator": "4034941653551831716423587107"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "7672578465211958329083694762436428212429418316777977081215214719005301959847601",
+              "numerator": "7672578465213288349102864035280311531549619285699335515929339837195981540073952"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "8845342599588521498621254294012114508130951966108088563096422335762585251775206474099",
+              "numerator": "12560885411578582407992530405344023363561449562622386533665804272531363532052466474099"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "692021945832208856132467664221632",
+              "numerator": "914292505275486772895897931840137"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "5811249992295871588463365425234493163895837719688444210469542326388254825947433049438",
+              "numerator": "5811251085320514370472388144293938589021128757937271916071011844808922018890676561821"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 14,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 8,
+        "name": "rational_r3_case5",
+        "noncommuting_atoms": true,
+        "rank_K": 3,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "132638637107388777687982433198942098454658460473957210192716515932262489560971",
+              "numerator": "342046151011839114297610570617902977565685044937520167949675412193137489560971"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "44184237059116706510972005576",
+              "numerator": "74318041173108043500839088813"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "4319233968100156391463478163336534287689337371895849170870138142306102353152332325",
+              "numerator": "4319233968100995275853561433242505078677277135858214868316070414271834558676302096"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "38438801162323260039645322600321928489451104371148270022354135041",
+              "numerator": "76640820278771399418668931591951789397403869274909802828504135041"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "767834445671696383",
+              "numerator": "1300241082507075808"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "4839765655399393957078386395156826411929208229115786713526373311689",
+              "numerator": "4839767104430750193607581440322651383932911141730051580602998760264"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 16,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 10,
+        "matrix_size": 2,
+        "name": "rational_r1_case6",
+        "noncommuting_atoms": false,
+        "rank_K": 1,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "590499743619610978182509439863742938798797362847",
+              "numerator": "1156398762869587985736922956872628302298797362847"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "278179",
+              "numerator": "372155"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "38423352115261215541784022035566751056223581937791",
+              "numerator": "38423352115264744213185114131043937578188811114008"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "99127886315084689964719028583361367",
+              "numerator": "255553809197084259347789676853361367"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "611524",
+              "numerator": "1281189"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "1361371278587214717834685636312099127",
+              "numerator": "1361371926859097789834254059192255552"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 12,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 4,
+        "matrix_size": 4,
+        "name": "rational_r2_case7",
+        "noncommuting_atoms": true,
+        "rank_K": 2,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "32289240457976711203805200144472573400832946540669530159536009685786203994173",
+              "numerator": "78274749341954377345136580111017286255381391899896537610694807405286203994173"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "674074235643785652681",
+              "numerator": "1062612526003546954436"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "4102021202505404715854301527273953500531238198364062716387379911718146566615077056375",
+              "numerator": "4102021202506039801667100561114346375032948911698030304627358706813351992399457735504"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "9521328618748316697033763907386435563938874331387658033615996282431149487752569",
+              "numerator": "21604080676538334870191771597736146806901468272575608057725509297948241397752569"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "112383951881425120",
+              "numerator": "211967292601561959"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "11041213297028274724963988891676145427158994152279513628567805796486559070933397",
+              "numerator": "11041217598798664816794080503252965272641363556307028339744267162852578558234375"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 14,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 8,
+        "name": "rational_r3_case8",
+        "noncommuting_atoms": true,
+        "rank_K": 3,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "643421424787614929428438596590719494819465058192411461203879883677815889773",
+              "numerator": "2044107179102120821037606529680235391767938599422982845345830333130940889773"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "2295068594539173823825018991091208",
+              "numerator": "4119556014833860415409456167279713"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "1136660088246573829909832655243087359437536976667199692465858606436356708276451277624",
+              "numerator": "1136660088246774292431721327069429607501106396695260998292363741112141620294458583501"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "497843435066960343766888680357780473445850606805730132644001161",
+              "numerator": "1216683209100666945201729721359518234011465551846125869607751161"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "487482568433838659656792897024",
+              "numerator": "967458178372054092714850297369"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "85011980127323477177507755963947164807323642360076671809209194243049984",
+              "numerator": "85012014173377257502860101491578923086143106248330211281836533756611389"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 16,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 10,
+        "matrix_size": 2,
+        "name": "rational_r1_case9",
+        "noncommuting_atoms": false,
+        "rank_K": 1,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "277315164712171700439756561",
+              "numerator": "42110001886388462931075439756561"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "54278334",
+              "numerator": "102836893"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "83980965628915797634108203549600000",
+              "numerator": "83980965628925517645772208024100539"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "18755213977101890141333135851338379781441",
+              "numerator": "48727404798219824496659219269059813531441"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "74507269408",
+              "numerator": "152654513625"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "108839518900674222422544622466674222314241024",
+              "numerator": "108839564250464106542515391419461902340379281"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 12,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 4,
+        "name": "rational_r2_case10",
+        "noncommuting_atoms": true,
+        "rank_K": 2,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "107003697311099982328221589092275102605222234597029787846764531638419185299271",
+              "numerator": "293543314294303318473866252323881378388419318398262046899972423588419185299271"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "9840954183208754773195467676",
+              "numerator": "15639111741542533721651748951"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "22136243813428639141715668216688087988719288250781711234687209813729642054072",
+              "numerator": "22136243813431469828646922100459540596574442750813088186094543958105040557631"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "329732132278167428053974598294561844986054892815875117795323475491968881973",
+              "numerator": "751932251030452498020633858877348446286102256974154212181026356826998881973"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "8143817078641384964038039109",
+              "numerator": "14632009573573332957446865594"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "2487762611676300568004628176151505105891412076260378995330579238596386233441",
+              "numerator": "2487763146040729803139077969336153744818315954637205216437297685508032757406"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 14,
+        "zero_atoms": 1
+      },
+      {
+        "boundary_atoms": 6,
+        "matrix_size": 8,
+        "name": "rational_r3_case11",
+        "noncommuting_atoms": true,
+        "rank_K": 3,
+        "regularized_cases": [
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "647519002477932996374335999643918675063712153180680712116730581662613033176269980539",
+              "numerator": "2628563827835663112456645069463898728433758884355047358182277395279774008176269980539"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "21111287915693706907695006936639521",
+              "numerator": "39460328882603390130003137124833471"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "disjoint",
+            "quadratic_ratio": {
+              "denominator": "451856125584342178024704981693338015726255611690079035513618982750545318601881106",
+              "numerator": "451856125584420695199509274862637226338572588856275905314556400178922300084166247"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1000000",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "43930185912949478763497849351088207206123064090327191000074461941510561",
+              "numerator": "163191286266228421732808610097099606118780071188387274619661522911510561"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "7",
+              "numerator": "1"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "1249064378240966740186460585672",
+              "numerator": "3522391567676341161077566241387"
+            }
+          },
+          {
+            "epsilon": {
+              "denominator": "1",
+              "numerator": "1000000"
+            },
+            "mode": "overlap",
+            "quadratic_ratio": {
+              "denominator": "781004874917414905842930253428022459377424955301087386738074156262056192",
+              "numerator": "781005415432240924496684136314970656830956133107741881160460893458879731"
+            }
+          }
+        ],
+        "unrestricted_real_power_checks": 5,
+        "variables": 16,
+        "zero_atoms": 1
+      }
+    ],
+    "regularized_cases": 102,
+    "schema": "clifford-quadratic-audit-v1",
+    "scope": "Exact finite algebra checks; the universal proof is in paper/main.tex.",
+    "seed": 2026090603,
+    "source_sha256": "aa1920ced4106fd3d0c33ec31916206a46e177c76b25f04c92051898406994fb",
+    "status": "PASS",
+    "symbolic_identities": [
+      {
+        "identity": "det(t I + sum x_j Gamma_j) = (t^2 - sum x_j^2)^(2^(r-1))",
+        "matrix_size": 2,
+        "monomial_count": 2,
+        "r": 1
+      },
+      {
+        "identity": "det(t I + sum x_j Gamma_j) = (t^2 - sum x_j^2)^(2^(r-1))",
+        "matrix_size": 4,
+        "monomial_count": 6,
+        "r": 2
+      },
+      {
+        "identity": "det(t I + sum x_j Gamma_j) = (t^2 - sum x_j^2)^(2^(r-1))",
+        "matrix_size": 8,
+        "monomial_count": 35,
+        "r": 3
+      }
+    ]
+  },
+  "finite_valuated_rank_two_audit": {
+    "certificate_stream_sha256": "9eb0e7e8d5edf3cde90e21556308bb5475e8039243bb779a2f5233cb1b8a8321",
+    "input_lambda_cases": 5787,
+    "lambda_values": [
+      1,
+      2,
+      3
+    ],
+    "maximum_gap": 9,
+    "minimum_gap": 0,
+    "negative_ingleton_gaps": 0,
+    "pair_order": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "scope": "Finite n=4 convention regression only. The general theorem uses rank-two realization and the module-length proof.",
+    "valuated_rank_two_inputs": 1929,
+    "valuation_alphabet": [
+      0,
+      1,
+      2,
+      3,
+      "inf"
+    ]
+  },
+  "gaussian_auxiliary_audit": {
+    "negative_controls": [
+      "independent-noise omission gives singular joint covariance",
+      "reversed conditioning inequality fails on strict cases",
+      "unit determinant ratio fails on the exact five-vector fixture"
+    ],
+    "nonunit_fixture": {
+      "auxiliary_lower": "97907081883566824574460869416768217429946891947318049475123088202980616286743604199294039080444331586482718696296353520109739369/257978921066380232250913934351447263940101730526754601644822034346327572174552246174606539080444331586482718696296353520109739369",
+      "dims": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "floor": "1/4",
+      "ratio": "3410222375694527479206227693938222747270441695263893349469687687215766549413227103309480929360927456016922854703490024900328225978091140238984628837411955714677729280109739369/4219448638301506129878760745099994037612050642527124004733043339540034069746331373878782950969768159600348856013916909533879145043633137495500403837411955714677729280109739369",
+      "strict_conditional_entropy_decrease": true
+    },
+    "random_cases": 40,
+    "records": [
+      {
+        "auxiliary_lower": "25439780491417212790491214670857/41524591162979239556458910122089",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "3566851595527045241994383219145526356988227945345/3509315927854046296387925863178334661874172461953",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "51044234286613/57810832156350",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "5573554273875690036623/5210284536105274776276",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "422031509575178546601191656343/702164655693288113770813909831",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "81219799722293744927511070982944897941047961569/80517284030018269343095180360237825385542552673",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "12435055503360840846246507217/24564602615847948091468261440",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "33571312243587845390673665982242690344794531/10995735042397158202580111502715850414830000",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "2152907740671746602500830681/2570114891599386265614101951",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "1852411306206499578354917787765326643098573441/1371911668796432747743659338276542341160062833",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "310076358326902084037789595085/310583287502856524404087037076",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "220384354969633981549165582070234089635081932525/207284090246694237418571522809729226833944797508",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "27723944574872985505/27664900086080021016",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "375410301433983591909453553515388150/251876191650396386449120189997680569",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "252045799526563087873121369305/3943418198942346682144695513",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "43716066317128260253808626005866999272285695/72733646324951614770696398006619558018847",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "871124019787010749913651/975365916109435474460595",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "138779769360282195062391255729446317975/47519123611254763241429793764619632299",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "213368006981522359582645957384199507/254208249674141827420360574654287187",
+        "dims": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "floor": "1/4",
+        "ratio": "6084066704157788267620535857957092709134945016010177838017/3884523120915501820508670002406672315404464214850788850625",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "1759379058994893781709442416943490291864087397061/2482535501812533175140022859953540715731394492810",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "4190364853547413979352007846258960101799806726297530162045048353431357759065125/1072409473686990669838856096873288871800212528841981965083655606312202825072997",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "22230935221144619852066396126433633493146820008011/24959130302176004677119402763894284706280395581714",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "6445476589191778922492438683873565004528973447357296578609945556731992138087669877/6072883930628610745312235279482286484137332042658485131605151999445373790329036526",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "39403066191216687693397500277874448724076526191/59213114568840476299985816960976859087542408816",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "551550692244719281692284641042013474750675093172217584052264730546750855/447628995750547595129554148391096689709089373363571059350670103477606236",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "784185630618525052789186976027395910150023090647211/1484518409410668609741525068808743157124905499851138",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "1260799795706545952798172180863427901727016592144285525146255009023083801150041089/421989554877886494277399367290244693185476792668109043642873177599550601141353437",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "1106653499164217510544954943657754967825/1436026855200102555784807552229328187153",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "1244678556288119497105263132804960320278069583655608935173964101170829/748118602398522574709834377389309366077354720664059396390992036884029",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "3365476566246425686646378711888831818721087351856327/5068146205626941855907381323075814146978437377542308",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "4373812694488695102909031153654511040709097636934395114794813573276026772063703102245/3890826629267758708043040447310455817735416115559039685413518887470134951719626509928",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "2758557086210065758077971709408304195/1754347637243788077973753812409063888",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "56244372315344627562816721932132466682343962958080283936375/4828302027658589093882480891235366978600299792875237174804",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "82015076102486081688162947006679812950795636285473/167710086595946258533760666462521974073082659189093",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "700238107340574742998424666709480679204561853667641962358087752812395306129971082169/449047936866762729335836491921024257257245358731542785750003119678883161887862504121",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "11229769586358183042374238287264932410104980363739317/450205541721329201459223093831070524711299849336220",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "24149493632326886709258519550256537955315633275972778587432052223223861989068873/135632418547915349061066825910673332588750898744533096242188928230560469156617",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "2336302473049037027746862922805069270406863/6191894930715165284764829746074911215678752",
+        "dims": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "floor": "1/16",
+        "ratio": "936289504924840614433843643353734978958329837971090765790151894118/219204230880866322152485749640811717151055708119907080995844964677",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "2908530209690223961951609767453847985337249678905838131999969262873/4364355678070517281259617265917359169636118523423590787135672106250",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "194640985128152954017279847373221860050107466600492273647179356577971273085160057788763282114989188004173463059241/23314000717890429283902215591921663675081654750714818312019692248407634182098356192572036859320881448987499600000",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "23385418291230879634586790541264127373737685631265019639946028679943907/22829358430026907026493871906273844550500824111828713521881781431239864",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "103256825664150810532075665878142528011655447768262307794592002354842713325881222451534010378889256086919447408815102/5989660037809337546653733644582089895032401265586194204296842759720965261465202512037516124781286828796306981100617",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "65756904568808304788418306948198563893389369988557473470433/136377812963015107598836222148920303033822277353315134500915",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "183777118437546294856488141314085366140343925901172393830138690697824055019273086573930879889883619333/5124746720840373773429628240719479760901144536798067023214766923221872391204114088205228041171919790",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "16719187892004609524881686756353312278052992944788517483567852274245940/21674704768880025826900839955285042568166820476695071123128426803489043",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "202433290752678319579297751218688398267549686792339673408486427564123953214520135910445685808534566996877688342860438913300/81080978941885862933178306664580472195880441181351139544676514405825855648435496389273098225198465303954910615175444523943",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "33222389327828822505609451785606127234399796767963827575049031830811/36132613963071845243833015140106577324843630888502934356184831761216",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "4703699866064227063408618439862350245383929227951730975365030186747220197661194518318674653023242078229905390425/3605094061398536457551989609416365713771651720063710381428106430168956090477133254234703478223445623235513375248",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "250685369098614053735945571274756520304166164123053042173673212189315/567394252521240025616008307353663005558973812025171958973472446367232",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "260295064195751560381057708335241097372005727460070783278487247826289082334493051642321656936934939686238096143/79122364307257958769593368014996295716890997069189678933337353449052191815591078196097658843328688187426828288",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "237608848522164645826577984255007977423495932828633280084179/215693211233349892029076413628103716787336610858987825128568",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "175033614835447061282544346270521870305612235255298815935267725217096323332501838361226004594966059/319694678139222184306628053354578296517934439098552247668516019251021975548096698270728188734740",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "313202606170332919829262253272805205132749172448256667731199817400600/320075110320463566990889734810199134777447945857422575874150555386003",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "255139660447143647904311378685847962328475389246405770003267583661696393580414994919280723622938669804705963039328/109070328027594759690645985259768712932749270499778328501458138695790899953510807714369285638995920731925874489725",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "2793682551301469912178577058020964333813809615911206452575112864/2488555211006159528451733406298092596371155330364835979515111955",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "206015175137706884358896162044146374063654108670887607264433735873416930896076911877951443945125727865756/66906595215595650120561907469256976284460989076169873760276171638720917386150819464801272198981447887865",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "267018696084462518775467545341222341983792216141109370309206643/582617976939884759186567553587088157430321090816238052879628992",
+        "dims": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "floor": "1/16",
+        "ratio": "7537533963227040912965539810802095170828210856856503276101642189674937097161043037860985997167811152/4004789203195540559939327822774552183302648496891655417098209802360089363811102709108432042668912035",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "112502402550621796016956676242044544124517444448207185727683650047008276300463/491932114056867262647101427225369251833057325568091461512982213001596916445740",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "3502194401249747370814098298673211321517311874716626698723351447374052569627370351437509859728475337672353728521620753159/230950761688699500997975562797735213217095095885998238530725774071865595977335877157234619115810659350233365145190149108",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "5467428441476546278518207243973918109668945096566963682618057495849723574127721/12515478119988575850956695295672993498689736206652485092284291650412558674887932",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "2369461414091935784703842541035880343990158916110976634243099822963180811618453253146663369619816374791214670473481010764593/1381297297350439068956022674653380149918045698914318236997249418169715498481447931050117823349257906225257198177488062192095",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "3832148413551931578051624099945149432415046008793265275787614035671/7564991597300113863433421334616837013199399650832744624238057772160",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "104920095433056212877822737463882079748837414312137585819062107703015208493523817979165998672281513542454/67117243460983636039144822756271310830048154496493269242189009694932987036169074904455166608931951184185",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "1935120006423650925737085163204151303032494227930665247408620344250339694/2157068227680940339934045993108703943706191257335881075405926359187272535",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "1367476559181628070735181082379591262892385603642031252282864836518096612346860023838814913912877619710632583848215/1190572208374954655127743858050464928087080085112832894775762548374535966448979707091070405930580424834455715088081",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "431531639883483534580661756137561457754271344847245479507140684879068/664639761665981872359790218002328498286020643923942564010247258139143",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "529259179914439848006327389529483441810775776448529123415139850019107828428706445255641362303040760213976947/314382982779764705806703405812771481377311990776855423499686813746700754765883129287125577957468633583142447",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "616497989964061790230729503699426645155134386533309335110424815244/594658996339522393142094421038811613894872572135331759301931204315",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "12421736583372253878838709460684732736339925783472008747486735954790178766896462170881912898555087840465891/678498333591261252854698796110417459330617111125278842500066233013252120975773641708021424943113575584305",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "7550590460757844546817646372334382605160052688517406080731528563174001/13765540923718800159389983591638704070194342024566689380529979916948568",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "810023671519689506283123969923427006493434095239531246096135522552792062707998756775127452395263377317676761071/215471552889758371775905021783910342787846647406447619321625134984327425471029997238438791379291269659703511880",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "290718005390001792858944584207969986853752048227856789823584638426635/620904632888262887215922287278196776863219610672208981718635969396308",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "378118840166448235887086812960162069433216515816752361250522621964100221678927910557158894104486044628643/128758472021341472324630198104052887826166613697061749289217185752028820464255356283323646863108864468932",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "982635144072571519237306872496460880622981050960424447740143324/650739824997670596191915379321712444717256970387102388008179877",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "26966552611836491985286963132715051054015320697075714869562436671561501672645115904210496528929484995/2682358628120228052938108679545784936640185934076748405814155111411926682568707054489361032697280748",
+        "strict_conditional_entropy_decrease": true
+      },
+      {
+        "auxiliary_lower": "9852426487932723300276798155300032577175365714163127919539969253999201677/9232948636385773634816861198017291198892885494358836876774817412529228800",
+        "dims": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "floor": "1/64",
+        "ratio": "819444673591552567295961604440526688916753983892146014754405179115349703830849817828885291183397437156702123806663/51742024679441940768997087298849091611840940178299476827173153845097006049784552591136229076488500941574082618750",
+        "strict_conditional_entropy_decrease": true
+      }
+    ],
+    "schema": "gaussian-auxiliary-exact-v1",
+    "scope": "Exact finite formula and sign regression; not the universal proof or a sharpness claim.",
+    "seed": 2026090602,
+    "source_sha256": "d3f2a71de3b0f797a7bbd543efcec4f8e03fb31bfd026089d64f3c22a3cab52c",
+    "status": "PASS"
+  },
+  "legacy_mst_floor": {
     "all_16_membership_atoms_cases": 8,
     "arithmetic": "exact fractions.Fraction; decimal strings for presentation only",
     "assertions": [
@@ -84,54 +2037,7 @@
     "universal_constant": "476656^(-5)",
     "universal_constant_decimal": "4.0641963287590736257E-29"
   },
-  "finite_valuated_rank_two_audit": {
-    "certificate_stream_sha256": "9eb0e7e8d5edf3cde90e21556308bb5475e8039243bb779a2f5233cb1b8a8321",
-    "input_lambda_cases": 5787,
-    "lambda_values": [
-      1,
-      2,
-      3
-    ],
-    "maximum_gap": 9,
-    "minimum_gap": 0,
-    "negative_ingleton_gaps": 0,
-    "pair_order": [
-      [
-        0,
-        1
-      ],
-      [
-        0,
-        2
-      ],
-      [
-        0,
-        3
-      ],
-      [
-        1,
-        2
-      ],
-      [
-        1,
-        3
-      ],
-      [
-        2,
-        3
-      ]
-    ],
-    "scope": "Finite n=4 convention regression only. The general theorem uses rank-two realization and the module-length proof.",
-    "valuated_rank_two_inputs": 1929,
-    "valuation_alphabet": [
-      0,
-      1,
-      2,
-      3,
-      "inf"
-    ]
-  },
-  "independent_explicit_floor_audit": {
+  "legacy_mst_hostile_audit": {
     "arithmetic": "fractions.Fraction only",
     "independence": "no imports or generated instances from the candidate tests",
     "integer_inputs": {
@@ -211,17 +2117,27 @@
     "target_h": "16"
   },
   "provenance": {
+    "clifford_floor_py_sha256": "aa1920ced4106fd3d0c33ec31916206a46e177c76b25f04c92051898406994fb",
     "explicit_floor_py_sha256": "889afe01a8445bd4af17977e148e79120421c135e4b9e4823c824417322f4e65",
+    "gaussian_floor_py_sha256": "d3f2a71de3b0f797a7bbd543efcec4f8e03fb31bfd026089d64f3c22a3cab52c",
     "hostile_audit_py_sha256": "cee9a40c6f2b70ed2c806106ffd8b3cc1c1e85b918013a80d0b829cb35c933dd",
-    "paper_main_tex_sha256": "40de10e5bf6f4d844b4c83ff30b18031ac4af1a331005a9314d0afa7913a8529",
-    "paper_references_bib_sha256": "4dcff531521c283cb60bc961e12f27c942e2f37696a7c0cfdac664e03e4099a7",
-    "reproduce_py_sha256": "82ebd72d65008fae449a28ff1adce88a8d4f434d810246ceae79834dac32fd56",
+    "paper_main_tex_sha256": "15ea9ee72b3a6c93d4b56e81f7d563526d10466ed30b74fdb619d678d5e24455",
+    "paper_references_bib_sha256": "831649e0f2974ad94df5c780e2290babe667106cf89448258925c300ef1b97c6",
+    "reproduce_py_sha256": "5cbaa492dd089fc391b1d99ca4f0307002491aafa304c982c2d9d71e8d26ecd8",
     "runtime": "Python >=3.11; standard library only",
-    "test_explicit_floor_py_sha256": "2f7fa70cd7f04abac34f55c4ab9e46e1e222a45a4200a7912f233cb4ea8db581",
+    "test_explicit_floor_py_sha256": "cb7b1367e7d23cfb496537042c25daabb53bf9fd03b5c097bfc53936f66cadbb",
+    "test_gaussian_clifford_py_sha256": "188f451950df83ccd9c3672083eaa06b69c4cec773189d76a2c91c803470fde7",
     "test_reproduce_py_sha256": "5033328d8af3fa6071f878d9a9f03d33eb527b7082acca92e78f3f0573b36b96"
   },
-  "schema": "lorentzian-ingleton-quadratics-certificates-v3",
-  "theorem_scope": "The computations certify formulas and finite conventions; they do not replace the proof of the explicit universal lower bound 476656^(-5). Exact input certification is for rational data; the symbolic theorem applies to real coefficients.",
+  "quadratic_lower_bound": {
+    "all_overlaps": "1/16384",
+    "disjoint_queries": "1/16",
+    "proof_route": "auxiliary covariance / Schur complements, then Clifford determinant powers",
+    "psd_dimension_bound": "128^(-d)",
+    "sharpness_claimed": false
+  },
+  "schema": "lorentzian-ingleton-quadratics-certificates-v4",
+  "theorem_scope": "The computations certify formulas and finite conventions; they do not replace the proof of the explicit universal lower bound 1/16384 (1/16 for disjoint queries). Exact input certification is for rational data; the symbolic theorem applies to real coefficients.",
   "upper_bound": {
     "convergence_samples": [
       {

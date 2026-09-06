@@ -18,10 +18,10 @@ import hostile_audit  # noqa: E402
 class ExplicitFloorTests(unittest.TestCase):
     def test_universal_constant_and_provenance_dependencies(self):
         report = json.loads((ROOT / "reports" / "certificates.json").read_text(encoding="utf-8"))
-        self.assertEqual(report["schema"], "lorentzian-ingleton-quadratics-certificates-v3")
+        self.assertEqual(report["schema"], "lorentzian-ingleton-quadratics-certificates-v4")
         self.assertEqual(496 * 31 ** 2, 476656)
-        self.assertEqual(report["explicit_quadratic_floor"]["universal_constant"], "476656^(-5)")
-        self.assertEqual(report["explicit_quadratic_floor"]["largest_active_clone_count"], 32)
+        self.assertEqual(report["legacy_mst_floor"]["universal_constant"], "476656^(-5)")
+        self.assertEqual(report["legacy_mst_floor"]["largest_active_clone_count"], 32)
         for key, path in (
             ("explicit_floor_py_sha256", "src/explicit_floor.py"),
             ("hostile_audit_py_sha256", "src/hostile_audit.py"),
@@ -38,14 +38,14 @@ class ExplicitFloorTests(unittest.TestCase):
 
     def test_adversarial_certificate_counts(self):
         report = json.loads((ROOT / "reports" / "certificates.json").read_text(encoding="utf-8"))
-        independent = report["independent_explicit_floor_audit"]["integer_inputs"]
+        independent = report["legacy_mst_hostile_audit"]["integer_inputs"]
         self.assertEqual(independent["enumerated_matrices"], 4096)
         self.assertEqual(independent["accepted"], 1317)
         self.assertEqual(independent["rejected_including_zero"], 2779)
         self.assertEqual(independent["accepted_with_loops"], 234)
         self.assertEqual(independent["accepted_with_parallel_pairs"], 531)
         self.assertEqual(independent["query_checks"], 3951)
-        self.assertEqual(report["explicit_quadratic_floor"]["random_cases"], 160)
+        self.assertEqual(report["legacy_mst_floor"]["random_cases"], 160)
 
     def test_exact_parallel_support_and_loop_deletion(self):
         matrix = [[0, 0, 7, 0], [0, 0, 7, 0], [7, 7, 0, 0], [0, 0, 0, 0]]

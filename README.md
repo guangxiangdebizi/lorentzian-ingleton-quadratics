@@ -7,6 +7,18 @@ All authors are affiliated with Shanghai University of Electric Power,
 Shanghai, China. No equal-contribution or corresponding-author designation
 is assigned.
 
+**Current explicit bound (2026-09-06):** `R >= 1/16384`, or `R >= 1/16`
+for disjoint queries. The proof combines a finite Schur/Fischer bound for
+PSD pencils with real Clifford determinant powers. It has two internal
+independent hostile audits; global priority and sharpness are not certified.
+
+**Earlier MST attribution correction:** the qualitative floor follows from
+Huang--Huh--Soskin--Wang's coefficient-to-tree comparison combined with
+the shared-module transfer. This note supplies an explicit self-contained
+construction; no improvement over prior quantitative tree approximation
+or independent new metric mechanism is claimed. See the final section
+of the paper and [the updated overlap audit](notes/novelty-audit.md).
+
 This repository contains a self-contained research note and exact certificates
 for the following result.
 
@@ -30,44 +42,42 @@ Here juxtaposition denotes union. The main theorem proves a universal bound,
 independent of the number of variables, `f`, the four subsets and `epsilon`:
 
 ```text
-R_f >= c_2^* >= 476656^(-5).
+R_f >= c_2^* >= 1/16384.
 ```
 
 Together with an exact five-vector determinantal upper-bound family:
 
 ```text
-476656^(-5) <= c_2^* <= (-107 + 51 sqrt(17))/128
-4.0642e-29  <= c_2^* <= 0.806862397707...
+1/16384         <= c_2^* <= (-107 + 51 sqrt(17))/128
+0.00006103515625 <= c_2^* <= 0.806862397707...
 ```
 
-The lower bound is deliberately crude and not asserted sharp. This applies
+The lower bound improves the previous local `476656^(-5)` bound by more
+than `10^24`, but remains deliberately crude and is not asserted sharp. It applies
 to all nonnegative Lorentzian quadratics, not only size-two PSD determinants.
 
 ## Why the proof is not just support Ingleton
 
 The support of a Lorentzian quadratic has rank two, but coefficients and the
 regularizer can degenerate at different rates. A support-only inequality does
-not control such simultaneous limits. The explicit proof instead works at
-the actual coefficient values:
+not control such simultaneous limits. The current proof works at actual
+coefficient values:
 
 ```text
-16 membership atoms
-  -> at most 32 polarized clones, with exact signature preservation
-  -> weighted squared distances on a sphere by row-sum normalization
-  -> a bottleneck ultrametric with distance distortion at most N-1
-  -> a representable rank-two coefficient template
-  -> one finite-length module carrying all ten evaluations
-  -> max-product Ingleton
-  -> sum/max comparison: [binom(N,2) (N-1)^2]^(-5).
+Schur complements + an auxiliary covariance + conditional Fischer
+  -> a four-block principal-determinant bound 4^(-dim A)
+  -> numerator-only overlap duplication
+  -> PSD bound 128^(-d) in every dimension
+  -> a real Clifford representation det(sum z_i P_i)=(2q)^(M/2)
+  -> exponent cancellation: R_q >= 128^(-2)=1/16384.
 ```
 
-For rational coefficients, the input signature gate and the finite
-coefficient comparator use exact rational arithmetic, including singular
-matrices, loops and parallel classes. This is not a decision oracle for
-arbitrary black-box real numbers. The paper retains the earlier
-semialgebraic degeneration argument as an alternative proof of positivity;
-the new finite-scale comparator replaces that argument for the explicit
-bound, rather than changing the existing common-module mechanism.
+The Clifford matrices may have exponential size; this is an exact proof
+device, not an efficient representation algorithm. The earlier rational
+MST comparator and semialgebraic degeneration argument remain as supporting
+alternatives. Their valid but weaker `476656^(-5)` certificate is preserved
+under explicitly named legacy fields. No exact oracle for unspecified
+black-box real numbers is asserted.
 
 ## Repository map
 
@@ -84,6 +94,12 @@ bound, rather than changing the existing common-module mechanism.
   spherical/ultrametric comparison and multiscale regression.
 - [`src/hostile_audit.py`](src/hostile_audit.py): independent rational input
   enumeration, singular PSD gate, and directly measured Laurent quotients.
+- [`src/gaussian_floor.py`](src/gaussian_floor.py): exact auxiliary-covariance
+  identities and a nonunit determinant-ratio fixture.
+- [`src/clifford_floor.py`](src/clifford_floor.py): signed exterior generators,
+  complete low-rank symbolic determinant identities, and degenerate cases.
+- [`tests/test_gaussian_clifford.py`](tests/test_gaussian_clifford.py): new
+  constant, provenance, rank-zero, power-cancellation, and negative-control gates.
 - [`reports/certificates.json`](reports/certificates.json): generated manifest.
 - [`tests/test_reproduce.py`](tests/test_reproduce.py): regression gates.
 - [`tests/test_explicit_floor.py`](tests/test_explicit_floor.py): explicit

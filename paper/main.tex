@@ -24,7 +24,7 @@
 \title{Explicit Uniform Ingleton Bounds for\\Nonnegative Lorentzian Quadratics}
 \author{Xingyu Chen \qquad Yifei Sun \qquad Xiaojing Zhu\\
 \small Shanghai University of Electric Power, Shanghai, China}
-\date{5 September 2026}
+\date{6 September 2026}
 
 \begin{document}
 \maketitle
@@ -36,18 +36,20 @@ subset $S$ of its variables, put
  V_\varepsilon(S)=f(\one_S+\varepsilon\one_E),\qquad \varepsilon>0.
 \]
 We prove that if $f$ is Lorentzian, then the multiplicative Ingleton ratio
-formed from the ten values $V_\varepsilon(S)$ is at least $476656^{-5}$.
+formed from the ten values $V_\varepsilon(S)$ is at least $1/16384$,
+and at least $1/16$ when the four query sets are pairwise disjoint.
 The bound is independent of the number of variables, the polynomial, four
-arbitrary and possibly overlapping subsets, and the regularizer.  After
-compression to sixteen membership atoms and polarization to at most
-thirty-two clones, a row-sum normalization expresses the coefficients as
-weighted squared distances on a sphere.  A minimum-bottleneck ultrametric
-approximates these distances with controlled distortion.  Its rank-two
-valuated template satisfies max-product Ingleton through one common
-finite-length module; comparison of sums with maxima gives the explicit
-constant.  For rational coefficients the finite comparator is constructible
-using exact rational arithmetic, including singular inputs.  An alternative
-semialgebraic degeneration proof recovers qualitative positivity.  An exact
+arbitrary and possibly overlapping subsets, and the regularizer.
+Schur complements and Fischer's inequality first give the PSD determinant
+bound $128^{-d}$ in matrix size $d$, or $4^{-d}$ for disjoint queries.
+A row-sum Lorentz-cone representation and explicit real symmetric
+Clifford matrices express a power of twice the quadratic as a PSD
+determinant.  The matrix-size exponent cancels, giving the stated bounds.
+Both steps are proved here, including zero coefficients and singular
+individual PSD matrices.  The weaker tree-comparison bound $476656^{-5}$
+and a qualitative semialgebraic degeneration proof are retained as
+alternative mechanisms.  The tree comparator remains constructible by
+exact rational arithmetic on rational inputs.  An exact
 five-vector determinantal family gives the upper bound
 \[
  \frac{-107+51\sqrt{17}}{128}=0.806862397707\ldots.
@@ -96,15 +98,17 @@ $A,B,C,D\subseteq E$, and $\varepsilon>0$.
 \label{thm:main}
 The optimal constant in \eqref{eq:optimal-constant} satisfies
 \[
- 476656^{-5}\leq c_2^\star
+ \frac1{16384}\leq c_2^\star
  \leq\frac{-107+51\sqrt{17}}{128}.
 \]
+For pairwise disjoint $A,B,C,D$, every ratio is at least $1/16$.
 \end{theorem}
 
-The lower bound is approximately $4.0642\cdot10^{-29}$; no sharpness is
-claimed.  The lower-bound proof works directly with the actual coefficients,
-without a compactness argument.  The following construction gives the upper
-bound in the theorem.
+The lower bound is $0.00006103515625$; no sharpness is claimed.
+The proof uses finite-dimensional matrix algebra, without a compactness
+argument.  Its Clifford matrices may be exponentially large, so the
+representation is not advertised as an efficient algorithm.
+The following construction gives the upper bound in the theorem.
 
 \begin{proposition}[Exact upper-bound family]
 \label{prop:upper}
@@ -118,14 +122,282 @@ Classical Ingleton says that a rank function obtained from linear subspaces
 satisfies an additive five-against-five inequality
 \cite{Ingleton1971}.  Theorem~\ref{thm:main} is not a direct application:
 the coefficients of $f$ and the regularizer may have unrelated scales.
-The finite-scale spherical-to-ultrametric comparison controls all these
-scales at once.  Section~\ref{sec:alternative} retains an alternative
-qualitative proof by degeneration.  Its membership compression,
-polarization, rank-two realization and common-module mechanism are shared
-with the explicit proof; the quantitative addition is the finite coefficient
-comparator, not a new proof of ordinary linear Ingleton.
+Section~\ref{sec:determinant-power} controls all these scales through an
+explicit PSD determinant power and a block-determinant inequality.
+The older spherical-to-ultrametric proof gives a separate, weaker
+$476656^{-5}$ bound, while Section~\ref{sec:alternative} retains the
+qualitative degeneration argument.  Their membership compression,
+polarization, rank-two realization, and common-module mechanism are not
+needed for the new bound.  The tree-comparison antecedents are recorded
+below; neither the Clifford construction nor the explicit determinant
+inequality is assigned a global priority claim by this offline derivation.
 
-\section{Fixed-dimensional reduction}
+\section{Explicit PSD bounds and quadratic powers}
+\label{sec:determinant-power}
+
+\subsection{A block-determinant inequality}
+
+For a real symmetric positive definite block matrix $\Sigma$, write $\Sigma[X]$ for
+its principal submatrix on the blocks in $X$, and
+\[
+ \Sigma_{X\mid Z}
+ =\Sigma[X]-\Sigma[X,Z]\Sigma[Z]^{-1}\Sigma[Z,X]
+\]
+for the Schur complement.  Empty determinants are $1$.
+Successive Schur complements give
+$\Sigma_{X\mid Z}\succeq\Sigma_{X\mid YZ}\succ0$ for disjoint blocks.
+We will also use Fischer's inequality
+$\det\Sigma[XY]\le\det\Sigma[X]\det\Sigma[Y]$ for disjoint $X,Y$.
+Both facts follow from the Schur formula: the additional term subtracted
+upon conditioning is positive semidefinite, and determinants are monotone
+on positive definite matrices in the Loewner order.
+
+\begin{lemma}[Disjoint block floor]\label{lem:block-floor}
+Let $\Sigma$ be a real symmetric positive definite matrix partitioned into four
+disjoint blocks $A,B,C,D$, with dimensions $a,b,c,d$.
+Its principal-determinant Ingleton ratio satisfies
+\[
+ R_\Sigma:=
+ \frac{\det\Sigma[AB]\det\Sigma[AC]\det\Sigma[AD]
+       \det\Sigma[BC]\det\Sigma[BD]}
+      {\det\Sigma[A]\det\Sigma[B]\det\Sigma[ABC]
+       \det\Sigma[ABD]\det\Sigma[CD]}
+ \ge4^{-\min(a,b)}.
+\]
+\end{lemma}
+
+\begin{proof}
+It suffices by symmetry to prove $R_\Sigma\ge4^{-a}$.
+If $a=0$, the ratio is
+\[
+ \frac{\det\Sigma[C]\det\Sigma[D]}{\det\Sigma[CD]}\ge1
+\]
+by Fischer.
+Otherwise put
+\[
+ X_Z=\Sigma_{A\mid Z},\qquad S=X_\varnothing,\qquad
+ K=X_B,\qquad L=X_{CD}.
+\]
+These matrices are positive definite.  For $Z=C,D$, put $X=X_Z$ and
+$Y=X_{BZ}$.  Schur monotonicity gives $X\succeq Y\succ0$ and $Y\preceq K$.
+Inverse order and Sylvester's determinant identity imply
+\[
+ \frac{\det(X+K)}{\det X}
+ =\det(I+K^{1/2}X^{-1}K^{1/2})
+ \le\det(I+K^{1/2}Y^{-1}K^{1/2})
+ =\frac{\det(Y+K)}{\det Y}.
+\]
+Together with $Y+K\preceq2K$, this proves
+\begin{equation}
+ \frac{\det X_Z}{\det X_{BZ}}
+ \ge\frac{\det(X_Z+K)}{2^a\det K},
+ \qquad Z=C,D.
+ \label{eq:block-noise-comparison}
+\end{equation}
+
+Introduce an additional $a$-dimensional block $U$.  Define the enlarged
+matrix to have the original principal submatrix $\Sigma$, the block
+$\Sigma[U]=S+K$, and cross blocks
+$\Sigma[U,Z]=\Sigma[A,Z]$ for $Z=A,B,C,D$.
+It is positive definite: start from $\operatorname{diag}(\Sigma,K)$
+on $(A,B,C,D,N)$ and apply the invertible linear change replacing $N$
+by $A+N$.  In the enlarged matrix, for $Z\subseteq\{B,C,D\}$,
+\[
+ \Sigma_{U\mid Z}=X_Z+K.
+\]
+Apply Fischer to the $C,D$ principal blocks of the Schur complement
+conditioned on $U$.  It gives
+\[
+ \det\Sigma_{C\mid U}\det\Sigma_{D\mid U}
+ \ge\det\Sigma_{CD\mid U}.
+\]
+Using
+$\det\Sigma[UZ]=\det\Sigma[U]\det\Sigma_{Z\mid U}
+=\det\Sigma[Z]\det\Sigma_{U\mid Z}$ for $Z=C,D,CD$,
+we obtain
+\begin{equation}
+ \det(X_C+K)\det(X_D+K)
+ \frac{\det\Sigma[C]\det\Sigma[D]}{\det\Sigma[CD]}
+ \ge\det(S+K)\det(L+K).
+ \label{eq:block-fischer-transfer}
+\end{equation}
+All references to $\Sigma$ in this step mean the specified enlarged
+matrix, whose original four-block principal submatrix is unchanged.
+
+Finally, factoring the ten original determinants by Schur complements
+gives the exact identity
+\[
+ R_\Sigma=
+ \frac{\det X_C}{\det X_{BC}}\,
+ \frac{\det X_D}{\det X_{BD}}\,
+ \frac{\det\Sigma[C]\det\Sigma[D]}{\det\Sigma[CD]}\,
+ \frac{\det K}{\det S}.
+\]
+Combining \eqref{eq:block-noise-comparison} and
+\eqref{eq:block-fischer-transfer} yields the stronger intermediate bound
+\[
+ R_\Sigma\ge
+ \frac{\det(S+K)\det(L+K)}{4^a\det S\det K}\ge4^{-a}.
+\]
+The last inequality uses $S+K\succeq S$ and $L+K\succeq K$.
+No simultaneous diagonalization or probabilistic inequality is used.
+\end{proof}
+
+\subsection{PSD pencils and arbitrary overlaps}
+
+\begin{theorem}[Explicit PSD determinant floor]\label{thm:psd-floor}
+Let $P_e\succeq0$ be real symmetric matrices of size $d\ge1$ such that
+$F(z)=\det(\sum_e z_eP_e)$ is nonzero.
+For arbitrary four subsets of its variables and every positive regularizer,
+$\mathcal R_F\ge128^{-d}$.  For pairwise disjoint query sets,
+$\mathcal R_F\ge4^{-d}$.
+\end{theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:psd-floor}]
+Write $F(z)=\det(\sum_e z_eP_e)$ and $S=\sum_eP_e$.
+Nonzero $F$ implies $S\succ0$: a null vector of $S$ would be a common
+null vector of all its PSD summands and make $F$ identically zero.
+For fixed $\epsilon>0$, apply the common congruence
+$(\epsilon S)^{-1/2}$ to every evaluation matrix.  The common determinant
+factor cancels from the five-against-five ratio.
+
+Let $\mathcal L=\{A,B,C,D\}$ now denote the four query labels.
+Group the congruence-transformed $P_e$ by their membership patterns
+$\omega\subseteq\mathcal L$, writing the sums as $A_\omega\succeq0$.
+The normalized evaluations are
+\[
+ V(J)=\det M_J,\qquad
+ M_J=I_d+\sum_{\omega:\,\omega\cap J\ne\varnothing}A_\omega .
+\]
+The outside pattern contributes only to the normalized background.
+Set
+\[
+ B_i=\sum_{\omega:\,i\in\omega}A_\omega,\qquad
+ M'_J=I_d+\sum_{i\in J}B_i,\qquad W(J)=\det M'_J.
+\]
+Each active atom is counted between one and $|J|$ times, so
+$M_J\preceq M'_J\preceq |J|M_J$ for nonempty $J$.
+Consequently $V(J)\le W(J)$ for all ten queries, and
+$W(J)\le2^dV(J)$ for the five pair numerators.  The denominator comparison
+has the favorable direction after taking reciprocals, giving
+\begin{equation}
+ \mathcal R_V\ge2^{-5d}\mathcal R_W.
+ \label{eq:overlap-duplication}
+\end{equation}
+
+Choose square factors $B_i=C_iC_i^T$, allowing singular or zero factors,
+and concatenate them as $C=[C_A\ C_B\ C_C\ C_D]$.
+The matrix $\Sigma=I_{4d}+C^TC$ is positive definite, with four disjoint
+blocks of size $d$.  Sylvester's identity gives
+\[
+ \det\Sigma[J]
+ =\det\left(I_d+\sum_{i\in J}C_iC_i^T\right)=W(J).
+\]
+Lemma~\ref{lem:block-floor} therefore gives $\mathcal R_W\ge4^{-d}$.
+Equation~\eqref{eq:overlap-duplication} proves
+$\mathcal R_F\ge2^{-5d}4^{-d}=128^{-d}$.
+For pairwise disjoint original query sets, every nonempty membership
+pattern is a singleton and $M_J=M'_J$; the bound is $4^{-d}$.
+The proof uses only finite matrix algebra and preserves the original
+positive regularizer throughout.
+\end{proof}
+
+\subsection{An explicit quadratic determinant power}
+
+\begin{lemma}[Real symmetric Clifford representation]
+\label{lem:clifford-power}
+Let $q(z)=z^THz/2$ be nonzero, with $H$ symmetric and entrywise
+nonnegative, and with at most one positive eigenvalue.
+There are an even integer $M\ge2$ and real symmetric PSD matrices $P_i$
+of size $M$ such that
+\begin{equation}
+ \det\left(\sum_i z_iP_i\right)=(2q(z))^{M/2},
+ \qquad \sum_iP_i\succ0.
+ \label{eq:quadratic-determinant-power}
+\end{equation}
+This is a polynomial identity in the original variables.
+\end{lemma}
+
+\begin{proof}
+Put $e=\mathbf1$, $s=He$, $T=e^THe>0$, and
+\[
+ K=\frac{ss^T}{T}-H.
+\]
+For $y$ with $s^Ty=0$, the inequality $y^THy>0$ would make
+$\operatorname{span}\{e,y\}$ an $H$-positive two-plane, contradicting
+the inertia assumption.  Thus $y^THy\le0$ on $s^\perp$.
+Writing any $x$ as $x=(s^Tx/T)e+y$ with $s^Ty=0$ gives
+$x^TKx=-y^THy\ge0$, so $K\succeq0$.
+
+Take a real Gram factorization $K_{ij}=\langle v_i,v_j\rangle$,
+and set $a_i=s_i/\sqrt T$.
+Choose Gram vectors in dimension $\operatorname{rank}K$ and pad with a
+zero coordinate if necessary so their dimension is
+$r=\max(1,\operatorname{rank}K)$.  Since $H$ is entrywise nonnegative,
+\[
+ a_i\ge0,\qquad
+ a_i^2-\|v_i\|^2=H_{ii}\ge0,\qquad a_i\ge\|v_i\|.
+\]
+Also $Ke=0$, so $\sum_i v_i=0$, while $\sum_i a_i=\sqrt T$.
+For all real $z$,
+\begin{equation}
+ 2q(z)=\left(\sum_i a_iz_i\right)^2
+             -\left\|\sum_i z_iv_i\right\|^2.
+ \label{eq:quadratic-lorentz-cone}
+\end{equation}
+
+Set $M=2^r$ and index the standard basis of $\R^M$ by subsets
+$S\subseteq[r]$.  Define
+\[
+ \Gamma_j e_S
+ =(-1)^{|S\cap\{1,\ldots,j-1\}|}e_{S\triangle\{j\}},
+ \qquad 1\le j\le r.
+\]
+Toggling $j$ leaves its sign exponent unchanged, so $\Gamma_j$ is
+symmetric and $\Gamma_j^2=I_M$.  If $i<j$, toggling $i$ reverses the
+sign for $\Gamma_j$, whereas toggling $j$ does not change the sign for
+$\Gamma_i$.  Hence $\Gamma_i\Gamma_j=-\Gamma_j\Gamma_i$.
+Each generator has zero diagonal and zero trace.  Therefore
+\[
+ \Gamma(v):=\sum_jv_j\Gamma_j,\qquad
+ \Gamma(v)^2=\|v\|^2I_M,\qquad
+ \operatorname{tr}\Gamma(v)=0 .
+\]
+When $v\ne0$, symmetry and the square identity force eigenvalues
+$\pm\|v\|$, and trace zero forces equal multiplicities $M/2$.
+For $v=0$ the same determinant formula is immediate.  For every real
+$t,v$ we consequently have the exact identity
+\[
+ \det(tI_M+\Gamma(v))=(t^2-\|v\|^2)^{M/2}.
+\]
+Define $P_i=a_iI_M+\Gamma(v_i)$.
+Its least eigenvalue is $a_i-\|v_i\|\ge0$, and
+$\sum_iP_i=\sqrt T\,I_M\succ0$.
+The determinant formula and \eqref{eq:quadratic-lorentz-cone} prove
+\eqref{eq:quadratic-determinant-power}.
+Rank-zero $K$ gives $r=1$, $M=2$, and $P_i=a_iI_2$, so that case
+is included without a zero exponent or a separate limiting argument.
+\end{proof}
+
+\begin{proof}[Proof of the quadratic lower bound in Theorem~\ref{thm:main}]
+Apply Lemma~\ref{lem:clifford-power} to the Hessian of the given
+quadratic and use exactly the original query vectors and regularizer.
+Every evaluation is positive; in the determinant representation its
+matrix is at least $\epsilon\sqrt T\,I_M$.
+For $F=(2q)^{M/2}$, five scalar factors cancel against five, giving
+\[
+ \mathcal R_F=(\mathcal R_q)^{M/2}\ge128^{-M}.
+\]
+Taking the positive $M/2$-th root yields
+$\mathcal R_q\ge128^{-2}=1/16384$.
+For disjoint query sets, the PSD bound is $4^{-M}$, yielding
+$\mathcal R_q\ge4^{-2}=1/16$.
+The PSD proof precedes and does not use the quadratic representation,
+so this transfer is not circular.  The exponential matrix size is not
+an efficiency assertion; it cancels exactly from the bound.
+\end{proof}
+
+\section{Fixed-dimensional reduction for the alternative proofs}
 
 Let $\mathcal L=\{\mathsf A,\mathsf B,\mathsf C,\mathsf D\}$ be a set of
 four labels.  Membership in the four ground-set subsets gives each variable a
@@ -180,7 +452,7 @@ and the common factor cancels in \eqref{eq:ratio}.  By
 Consequently a sequence on which the ratio tends to zero must have
 $\delta\to0$.
 
-\section{A finite coefficient comparator}
+\section{An alternative finite coefficient comparator}
 \label{sec:comparator}
 
 Introduce two clones $i^0,i^1$ of each compressed variable and polarize
@@ -277,10 +549,11 @@ paths in a minimum spanning tree; tied or zero edge lengths cause no change
 in the argument.
 \end{proof}
 
-\section{Max-product Ingleton and the explicit bound}
+\section{Max-product Ingleton and the alternative tree bound}
 \label{sec:explicit-bound}
 
-We first record the algebraic inequality shared by both proofs.
+We first record the algebraic inequality shared by the two alternative
+tree and degeneration proofs.
 
 \begin{lemma}[Module-length Ingleton]
 \label{lem:module-ingleton}
@@ -416,7 +689,13 @@ pass to the limit.  This argument uses ordinary discrete module lengths for
 each approximant, not a length over a nondiscrete valuation ring.
 \end{proof}
 
-\begin{proof}[Proof of the lower bound in Theorem~\ref{thm:main}]
+\begin{proposition}[Alternative tree-comparison bound]
+\label{prop:tree-bound}
+Under the hypotheses of Theorem~\ref{thm:main},
+$\mathcal R_f\ge476656^{-5}$.
+\end{proposition}
+
+\begin{proof}
 There are at most $M=\binom N2$ clone-pair monomials.  Equation
 \eqref{eq:comparison} gives, for each of the ten queries,
 \[
@@ -430,8 +709,9 @@ diagonal recovery and the homogeneous regularizer normalization give
  \geq\left[\binom N2(N-1)^2\right]^{-5}
  \geq(496\cdot961)^{-5}=476656^{-5}.
 \]
-No limiting argument on the original coefficients is required.  The upper
-bound in the theorem is proved in Proposition~\ref{prop:upper}.
+No limiting argument on the original coefficients is required.
+This weaker estimate is not the proof of the $1/16384$ bound in
+Theorem~\ref{thm:main}.
 \end{proof}
 
 \begin{remark}[Exact rational construction and its scope]
@@ -460,7 +740,7 @@ real inputs, nor do we compute the optimal constant.
 
 For comparison, the following argument proves $c_2^\star>0$ without
 evaluating a constant.  It retains the earlier semialgebraic route and is
-not needed for the explicit coefficient comparison above.
+not needed for either numerical proof above.
 
 \subsection{A valuated rank-two limit}
 
@@ -825,8 +1105,38 @@ certificate manifest.
 
 \section{Relation to adjacent results and open problems}
 
+\paragraph{A proof-level antecedent of the qualitative bound.}
+Huang, Huh, Soskin, and Wang
+\cite[Proposition~3.1, Corollary~3.4, and Lemma~3.5]{HuangHuhSoskinWang2025}
+already provide dimension-controlled coefficient comparison with a
+tropical rank-two tree template and bounded-ratio transfer.  Combined
+with the shared-module step of this note, this implies a qualitative
+positive floor, not just a similarity in terminology.
+To include zero coefficients after polarization, take
+$B^\eta=(I+\eta\one\one^T)^TB(I+\eta\one\one^T)$, $\eta>0$.
+It has the same positive index as $B$ and strictly positive entries.
+Normalize the diagonal, apply their comparison, and undo the diagonal
+congruence to obtain $K_N^{-1}B^\eta\le C^\eta\le B^\eta$ for a
+dimension-only $K_N$.  An entrywise convergent subsequence gives
+$K_N^{-1}B\le C\le B$ with precisely the zero support of $B$;
+the multiplicative tropical rank-two relations persist in the limit.
+The tree realization with parallel classes and leaf potentials, followed
+by the common-module argument, gives Ingleton for the ten maximum terms.
+Sum/max comparison yields $[\binom N2K_N]^{-5}$, with $N\le32$.
+
+The alternative bottleneck construction supplies the explicit value $(N-1)^2$,
+exact rational calculations, and a direct treatment of zero-distance
+classes.  We have not established a quantitative improvement over the
+earlier tree-approximation theory.  This part of the note is an explicit
+self-contained application, not a new metric-comparison mechanism.
+It proves Proposition~\ref{prop:tree-bound}, whereas the stronger main
+bound uses the separate Schur-complement and Clifford arguments.
+Baker, Huh, Kummer, and Lorscheid
+\cite[Theorem~1.2 and Section~4]{BakerHuhKummerLorscheid2026} provide
+an additional rank-two metric and squared-Euclidean-distance antecedent.
+
 The closest classical input is additive Ingleton for linear rank functions
-\cite{Ingleton1971}.  The proof above needs a valuated form because ordinary
+\cite{Ingleton1971}.  The alternative tree proof needs a valuated form because ordinary
 support ranks do not record relative coefficient-vanishing rates.
 
 Hall and Johnson studied bounded ratios of products of principal minors
@@ -851,8 +1161,9 @@ search, no theorem there matched the regularized ten-evaluation bound above.
 
 The following questions are not resolved by this note.
 \begin{enumerate}
-\item Determine the optimal value of $c_2^\star$, or substantially improve the
-explicit lower bound $476656^{-5}$.
+\item Determine the optimal value of $c_2^\star$, improve the lower bound
+$1/16384$, and determine the optimal disjoint-query constant, now between
+$1/16$ and the same upper-bound family.
 \item Decide whether an analogous degree-only bound holds for Lorentzian
 polynomials of degree three.
 \item Identify natural subclasses for which the sharp constant is $1$.
@@ -871,9 +1182,15 @@ construction.  A separate exact checker enumerates rational coefficient
 matrices with an admissibility gate and measures common lattice-quotient
 dimensions in truncated Laurent coefficient spaces.  These are internal
 regression and adversarial checks, not external peer review; no finite
-enumeration is used in place of the general proof above.  The explicit
-revision was derived offline and does not extend the dated literature
-search or establish a priority claim.
+enumeration is used in place of the general proofs above.
+The Schur-complement and Clifford proofs are likewise finite algebraic
+arguments; their independently audited derivation does not constitute
+external peer review.  The additional exact checkers
+\texttt{src/gaussian\_floor.py} and \texttt{src/clifford\_floor.py}
+test overlap directions, singular atoms, the determinant-power identity,
+rank-zero padding, and invalid-construction controls.
+This revision was derived offline and does not
+extend the dated literature search or establish a priority claim.
 
 \bibliographystyle{alpha}
 \bibliography{references}

@@ -20,6 +20,8 @@ from typing import Iterable, Mapping, Sequence
 
 import explicit_floor
 import hostile_audit
+import gaussian_floor
+import clifford_floor
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -470,11 +472,13 @@ def valuated_rank_two_report() -> dict:
 
 
 def build_report() -> dict:
+    if not __debug__:
+        raise AssertionError("EXACT_CERTIFICATES_REQUIRE_ASSERTIONS")
     source_path = Path(__file__).resolve()
     paper_path = ROOT / "paper" / "main.tex"
     bibliography_path = ROOT / "paper" / "references.bib"
     return {
-        "schema": "lorentzian-ingleton-quadratics-certificates-v3",
+        "schema": "lorentzian-ingleton-quadratics-certificates-v4",
         "provenance": {
             "reproduce_py_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
             "paper_main_tex_sha256": hashlib.sha256(paper_path.read_bytes()).hexdigest(),
@@ -493,19 +497,37 @@ def build_report() -> dict:
             "test_explicit_floor_py_sha256": hashlib.sha256(
                 (ROOT / "tests" / "test_explicit_floor.py").read_bytes()
             ).hexdigest(),
+            "gaussian_floor_py_sha256": hashlib.sha256(
+                (ROOT / "src" / "gaussian_floor.py").read_bytes()
+            ).hexdigest(),
+            "clifford_floor_py_sha256": hashlib.sha256(
+                (ROOT / "src" / "clifford_floor.py").read_bytes()
+            ).hexdigest(),
+            "test_gaussian_clifford_py_sha256": hashlib.sha256(
+                (ROOT / "tests" / "test_gaussian_clifford.py").read_bytes()
+            ).hexdigest(),
             "runtime": "Python >=3.11; standard library only",
         },
         "theorem_scope": (
             "The computations certify formulas and finite conventions; they do "
             "not replace the proof of the explicit universal lower bound "
-            "476656^(-5). Exact input certification is for rational data; "
+            "1/16384 (1/16 for disjoint queries). Exact input certification is for rational data; "
             "the symbolic theorem applies to real coefficients."
         ),
         "upper_bound": upper_bound_report(),
         "principal_minor_model_separation": principal_minor_separation_report(),
         "finite_valuated_rank_two_audit": valuated_rank_two_report(),
-        "explicit_quadratic_floor": explicit_floor.build_report(),
-        "independent_explicit_floor_audit": hostile_audit.build_report(),
+        "quadratic_lower_bound": {
+            "all_overlaps": "1/16384",
+            "disjoint_queries": "1/16",
+            "psd_dimension_bound": "128^(-d)",
+            "proof_route": "auxiliary covariance / Schur complements, then Clifford determinant powers",
+            "sharpness_claimed": False,
+        },
+        "gaussian_auxiliary_audit": gaussian_floor.build_report(),
+        "clifford_power_audit": clifford_floor.build_report(),
+        "legacy_mst_floor": explicit_floor.build_report(),
+        "legacy_mst_hostile_audit": hostile_audit.build_report(),
     }
 
 

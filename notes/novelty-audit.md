@@ -1,5 +1,28 @@
 # Novelty and priority audit
 
+## Current quantitative route: 2026-09-06
+
+The main lower bound is now `1/16384`, obtained from a finite Schur/Fischer
+PSD bound and a real Clifford determinantal power. The old MST comparison
+is retained as an alternative with its corrected attribution below.
+Two independent offline audits confirm the new proof chain; they do not
+certify global priority or exclude prior auxiliary-covariance arguments.
+
+## Superseding proof-level comparison: 2026-09-06
+
+[Huang--Huh--Soskin--Wang, Proposition 3.1, Corollary 3.4, Lemma 3.5](https://arxiv.org/html/2510.25030v2#S3)
+is a substantive antecedent: its coefficient comparison, combined with
+the shared-module rank-two step, yields a qualitative quadratic floor.
+The paper now explains positive congruence approximation, diagonal
+normalization, the zero-support limit, and the sum/max transfer.
+The MST proof is an explicit self-contained application. No smaller
+constant than the best prior quantitative tree bound has been established.
+
+[Baker--Huh--Kummer--Lorscheid Part 2, Theorem 1.2 and Section 4](https://arxiv.org/html/2607.15375v1)
+is another metric/squared-distance neighbor, not a verified statement of
+our exact ten-evaluation theorem. The earlier statement-level search below
+does not certify proof-level independence or priority.
+
 Audit date: **2026-08-27**
 
 Revision clarification, **2026-09-05**: the original dated search below is
